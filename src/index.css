@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SmartFlow Design System
+   Brand: Modern, trustworthy, clear, enterprise-focused
+   Colors based on SmartFlow brand guidelines */
+
+@layer base {
+  :root {
+    /* SmartFlow Brand Colors - HSL Format */
+    --background: 0 0% 100%;
+    --foreground: 216 33% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 33% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 33% 17%;
+
+    /* Primary: SmartFlow Orange #f07b49 */
+    --primary: 17 84% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Navy #1e2a3c */
+    --secondary: 216 33% 17%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted colors */
+    --muted: 210 20% 96%;
+    --muted-foreground: 216 20% 45%;
+
+    /* Accent: Blue #3c8ecc */
+    --accent: 205 58% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Additional brand colors */
+    --brand-orange-light: 32 86% 62%;
+    --brand-orange-soft: 17 85% 72%;
+    --brand-navy: 216 33% 17%;
+    --brand-blue: 205 58% 52%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 17 84% 62%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(216 33% 17%) 0%, hsl(216 40% 25%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(17 84% 62%) 0%, hsl(32 86% 62%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(17 84% 62%) 0%, hsl(17 84% 55%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(216 33% 17% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(216 33% 17% / 0.1), 0 2px 4px -2px hsl(216 33% 17% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(216 33% 17% / 0.1), 0 4px 6px -4px hsl(216 33% 17% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(216 33% 17% / 0.1), 0 8px 10px -6px hsl(216 33% 17% / 0.1);
+    --shadow-glow: 0 0 30px hsl(17 84% 62% / 0.3);
+  }
+
+  .dark {
+    --background: 216 33% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 216 33% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 216 33% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 17 84% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 216 25% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 216 25% 20%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 205 58% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 216 25% 25%;
+    --input: 216 25% 25%;
+    --ring: 17 84% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Focus states for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute left-0 top-0 -translate-y-full bg-primary text-primary-foreground px-4 py-2 z-50 focus:translate-y-0 transition-transform;
+  }
+}
+
+@layer components {
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-cta-gradient {
+    background: var(--gradient-cta);
+  }
+
+  .bg-accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .card-elevated {
+    box-shadow: var(--shadow-lg);
+    @apply bg-card transition-all duration-300;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-xl);
+    @apply -translate-y-1;
+  }
+
+  .feature-icon {
+    @apply w-14 h-14 rounded-xl flex items-center justify-center bg-primary/10 text-primary;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .bg-navy {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+}
