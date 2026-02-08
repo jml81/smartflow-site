@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,7 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
-import { Mail, Phone, MapPin, Send, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Send, AlertCircle, Building } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -78,11 +80,21 @@ function SuccessCheckmark(): React.ReactNode {
   );
 }
 
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
 const Yhteystiedot = (): React.ReactNode => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', organization: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    organization: '',
+    message: '',
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -94,6 +106,9 @@ const Yhteystiedot = (): React.ReactNode => {
     }
     if (!formData.organization.trim()) newErrors.organization = 'Organisaatio on pakollinen kenttä';
     if (!formData.message.trim()) newErrors.message = 'Viesti on pakollinen kenttä';
+    if (RECAPTCHA_SITE_KEY && !recaptchaToken) {
+      newErrors.recaptcha = 'Vahvista, että et ole robotti';
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -108,9 +123,46 @@ const Yhteystiedot = (): React.ReactNode => {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || undefined,
+          organization: formData.organization.trim() || undefined,
+          message: formData.message.trim(),
+          recaptchaToken: recaptchaToken ?? '',
+        }),
+      });
+
+      const result = (await response.json()) as { success: boolean; error?: string };
+
+      if (!result.success) {
+        const errorMessages: Record<string, string> = {
+          missing_fields: 'Täytä kaikki pakolliset kentät.',
+          invalid_email: 'Tarkista sähköpostiosoite.',
+          recaptcha_required: 'Vahvista, että et ole robotti.',
+          recaptcha_failed: 'reCAPTCHA-tarkistus epäonnistui. Yritä uudelleen.',
+          input_too_long: 'Kentän sisältö on liian pitkä.',
+          email_failed: 'Viestin lähetys epäonnistui. Yritä myöhemmin.',
+        };
+        toast.error(errorMessages[result.error ?? ''] ?? 'Jokin meni pieleen. Yritä uudelleen.');
+        recaptchaRef.current?.reset();
+        setRecaptchaToken(null);
+        return;
+      }
+
+      setIsSubmitted(true);
+    } catch {
+      toast.error('Yhteysvirhe. Tarkista verkkoyhteytesi ja yritä uudelleen.');
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(null);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -140,23 +192,22 @@ const Yhteystiedot = (): React.ReactNode => {
                     <ContactInfo
                       icon={<Mail className="h-5 w-5" aria-hidden="true" />}
                       title="Sähköposti"
-                      content="info@smartflow.fi"
-                      href="mailto:info@smartflow.fi"
-                    />
-                  </StaggeredItem>
-                  <StaggeredItem>
-                    <ContactInfo
-                      icon={<Phone className="h-5 w-5" aria-hidden="true" />}
-                      title="Puhelin"
-                      content="+358 9 123 4567"
-                      href="tel:+358912345567"
+                      content="viestinta@antesto.fi"
+                      href="mailto:viestinta@antesto.fi"
                     />
                   </StaggeredItem>
                   <StaggeredItem>
                     <ContactInfo
                       icon={<MapPin className="h-5 w-5" aria-hidden="true" />}
-                      title="Toimisto"
-                      content="Teknologiakatu 1, 00100 Helsinki"
+                      title="Osoite"
+                      content="Antesto Oy, PL 13, 00561 Helsinki"
+                    />
+                  </StaggeredItem>
+                  <StaggeredItem>
+                    <ContactInfo
+                      icon={<Building className="h-5 w-5" aria-hidden="true" />}
+                      title="Yritystiedot"
+                      content="Antesto Oy, Y-tunnus 3437354-2"
                     />
                   </StaggeredItem>
                 </StaggeredChildren>
@@ -179,7 +230,15 @@ const Yhteystiedot = (): React.ReactNode => {
                       className="mt-8"
                       onClick={() => {
                         setIsSubmitted(false);
-                        setFormData({ name: '', email: '', organization: '', message: '' });
+                        setFormData({
+                          name: '',
+                          email: '',
+                          phone: '',
+                          organization: '',
+                          message: '',
+                        });
+                        setRecaptchaToken(null);
+                        recaptchaRef.current?.reset();
                       }}
                     >
                       Lähetä uusi viesti
@@ -232,6 +291,17 @@ const Yhteystiedot = (): React.ReactNode => {
                         <FieldError error={errors.email} />
                       </div>
                       <div>
+                        <Label htmlFor="phone">Puhelin</Label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="mt-2 focus:shadow-[var(--glow-orange)]"
+                        />
+                      </div>
+                      <div>
                         <Label htmlFor="organization">
                           Organisaatio{' '}
                           <span className="text-destructive" aria-hidden="true">
@@ -268,6 +338,22 @@ const Yhteystiedot = (): React.ReactNode => {
                         />
                         <FieldError error={errors.message} />
                       </div>
+                      {RECAPTCHA_SITE_KEY && (
+                        <div>
+                          <ReCAPTCHA
+                            ref={recaptchaRef}
+                            sitekey={RECAPTCHA_SITE_KEY}
+                            onChange={(token) => {
+                              setRecaptchaToken(token);
+                              if (errors.recaptcha) {
+                                setErrors((prev) => ({ ...prev, recaptcha: '' }));
+                              }
+                            }}
+                            onExpired={() => setRecaptchaToken(null)}
+                          />
+                          <FieldError error={errors.recaptcha} />
+                        </div>
+                      )}
                       <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                         {isSubmitting ? (
                           'Lähetetään...'
