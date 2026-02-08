@@ -1,4 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
+import { AnimatedSection } from '@/components/ui/animated-section';
+import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
 import {
   ShieldCheck,
   Lock,
@@ -18,7 +20,7 @@ interface InfoCardProps {
   description: string;
 }
 
-function InfoCard({ icon, title, description }: InfoCardProps) {
+function InfoCard({ icon, title, description }: InfoCardProps): React.ReactNode {
   return (
     <div className="flex gap-4">
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -32,7 +34,7 @@ function InfoCard({ icon, title, description }: InfoCardProps) {
   );
 }
 
-const TurvallisuusJaSaavutettavuus = () => {
+const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
   const securityFeatures = [
     {
       icon: <ShieldCheck className="h-6 w-6" aria-hidden="true" />,
@@ -93,7 +95,7 @@ const TurvallisuusJaSaavutettavuus = () => {
     <Layout>
       <section className="bg-muted/50 py-12 md:py-16">
         <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
               Turvallisuus ja saavutettavuus
             </h1>
@@ -101,24 +103,32 @@ const TurvallisuusJaSaavutettavuus = () => {
               SmartFlow on rakennettu korkeimpien tietoturva- ja saavutettavuusstandardien
               mukaisesti.
             </p>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+            <AnimatedSection className="mb-12 text-center">
+              <div className="relative mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+                {/* Radial glow behind icon */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-2xl"
+                  style={{ boxShadow: 'var(--glow-blue)' }}
+                  aria-hidden="true"
+                />
                 <ShieldCheck className="h-8 w-8" aria-hidden="true" />
               </div>
               <h2 className="text-2xl font-bold sm:text-3xl">Tietoturva</h2>
-            </div>
-            <div className="grid gap-8 md:grid-cols-2">
+            </AnimatedSection>
+            <StaggeredChildren className="grid gap-8 md:grid-cols-2" stagger={0.1}>
               {securityFeatures.map((feature, index) => (
-                <InfoCard key={index} {...feature} />
+                <StaggeredItem key={index}>
+                  <InfoCard {...feature} />
+                </StaggeredItem>
               ))}
-            </div>
+            </StaggeredChildren>
           </div>
         </div>
       </section>
@@ -126,31 +136,41 @@ const TurvallisuusJaSaavutettavuus = () => {
       <section className="bg-muted/30 py-16 md:py-24">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <AnimatedSection className="mb-12 text-center">
+              <div className="relative mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                {/* Radial glow behind icon */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-2xl"
+                  style={{ boxShadow: 'var(--glow-orange)' }}
+                  aria-hidden="true"
+                />
                 <Users2 className="h-8 w-8" aria-hidden="true" />
               </div>
               <h2 className="text-2xl font-bold sm:text-3xl">Saavutettavuus</h2>
-            </div>
-            <div className="grid gap-8 md:grid-cols-2">
+            </AnimatedSection>
+            <StaggeredChildren className="grid gap-8 md:grid-cols-2" stagger={0.1}>
               {accessibilityFeatures.map((feature, index) => (
-                <InfoCard key={index} {...feature} />
+                <StaggeredItem key={index}>
+                  <InfoCard {...feature} />
+                </StaggeredItem>
               ))}
-            </div>
+            </StaggeredChildren>
           </div>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container">
-          <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 text-center md:p-12">
-            <Lock className="mx-auto h-12 w-12 text-accent" aria-hidden="true" />
-            <h2 className="mt-6 text-2xl font-bold">Tietosuojalupaus</h2>
-            <p className="mt-4 text-muted-foreground">
-              SmartFlow-alustalla henkilötietoja ei yhdistetä tarpeettomasti muuhun dataan. Käytämme
-              pseudonymisointia ja erillisiä tietokantoja oletusarvoisina periaatteina.
-            </p>
-          </div>
+          <AnimatedSection>
+            <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 text-center md:p-12">
+              <Lock className="mx-auto h-12 w-12 text-accent" aria-hidden="true" />
+              <h2 className="mt-6 text-2xl font-bold">Tietosuojalupaus</h2>
+              <p className="mt-4 text-muted-foreground">
+                SmartFlow-alustalla henkilötietoja ei yhdistetä tarpeettomasti muuhun dataan.
+                Käytämme pseudonymisointia ja erillisiä tietokantoja oletusarvoisina periaatteina.
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>

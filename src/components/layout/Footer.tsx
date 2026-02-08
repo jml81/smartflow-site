@@ -46,7 +46,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       to={link.href}
-                      className="text-sm text-secondary-foreground/70 transition-colors hover:text-primary"
+                      className="inline-block py-2 text-sm text-secondary-foreground/70 transition-colors hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -64,13 +64,13 @@ export function Footer() {
           <div className="flex gap-6">
             <Link
               to="/turvallisuus-ja-saavutettavuus"
-              className="text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
+              className="inline-block py-2 text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
             >
               Tietosuoja
             </Link>
             <Link
               to="/turvallisuus-ja-saavutettavuus"
-              className="text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
+              className="inline-block py-2 text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
             >
               Saavutettavuus
             </Link>

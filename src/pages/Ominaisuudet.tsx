@@ -1,4 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
+import { AnimatedSection } from '@/components/ui/animated-section';
+import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
 import {
   Palette,
   Workflow,
@@ -18,10 +20,12 @@ interface FeatureDetailProps {
   description: string;
 }
 
-function FeatureDetail({ icon, title, description }: FeatureDetailProps) {
+function FeatureDetail({ icon, title, description }: FeatureDetailProps): React.ReactNode {
   return (
-    <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg">
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+    <div className="group relative rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg overflow-hidden">
+      {/* Top accent line that scales on hover */}
+      <div className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:rounded-lg group-hover:bg-primary group-hover:text-primary-foreground">
         {icon}
       </div>
       <h3 className="mt-5 text-lg font-semibold">{title}</h3>
@@ -30,7 +34,7 @@ function FeatureDetail({ icon, title, description }: FeatureDetailProps) {
   );
 }
 
-const Ominaisuudet = () => {
+const Ominaisuudet = (): React.ReactNode => {
   const coreFeatures = [
     {
       icon: <Palette className="h-6 w-6" aria-hidden="true" />,
@@ -95,43 +99,66 @@ const Ominaisuudet = () => {
 
   return (
     <Layout>
-      <section className="bg-muted/50 py-12 md:py-16">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
+      <section className="relative bg-muted/50 py-12 md:py-16 overflow-hidden">
+        {/* Soft radial gradient background */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 0%, hsl(17 84% 62% / 0.06), transparent 60%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">Ominaisuudet</h1>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">
               SmartFlow tarjoaa kattavan valikoiman ominaisuuksia modernin digitaalisen asioinnin
               rakentamiseen.
             </p>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Keskeiset ominaisuudet</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-            Kaikki mitä tarvitset sähköisen asioinnin rakentamiseen ja hallintaan.
-          </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatedSection>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">Keskeiset ominaisuudet</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+              Kaikki mitä tarvitset sähköisen asioinnin rakentamiseen ja hallintaan.
+            </p>
+          </AnimatedSection>
+          <StaggeredChildren
+            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            stagger={0.08}
+          >
             {coreFeatures.map((feature, index) => (
-              <FeatureDetail key={index} {...feature} />
+              <StaggeredItem key={index}>
+                <FeatureDetail {...feature} />
+              </StaggeredItem>
             ))}
-          </div>
+          </StaggeredChildren>
         </div>
       </section>
 
       <section className="bg-muted/30 py-16 md:py-24">
         <div className="container">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Tekniset vahvuudet</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-            Moderni teknologia ja laaja integroitavuus helpottavat käyttöönottoa.
-          </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <AnimatedSection>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">Tekniset vahvuudet</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+              Moderni teknologia ja laaja integroitavuus helpottavat käyttöönottoa.
+            </p>
+          </AnimatedSection>
+          <StaggeredChildren
+            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            stagger={0.08}
+          >
             {technicalFeatures.map((feature, index) => (
-              <FeatureDetail key={index} {...feature} />
+              <StaggeredItem key={index}>
+                <FeatureDetail {...feature} />
+              </StaggeredItem>
             ))}
-          </div>
+          </StaggeredChildren>
         </div>
       </section>
     </Layout>

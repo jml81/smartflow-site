@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
+import { AnimatedSection } from '@/components/ui/animated-section';
+import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
+import { SectionDivider } from '@/components/ui/section-divider';
 import {
   Rocket,
   MessageSquare,
@@ -19,13 +22,18 @@ interface StepCardProps {
   description: string;
 }
 
-function StepCard({ number, icon, title, description }: StepCardProps) {
+function StepCard({ number, icon, title, description }: StepCardProps): React.ReactNode {
   return (
     <div className="relative flex flex-col items-center text-center">
       <div className="relative">
         <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
           {icon}
         </div>
+        {/* Pulse ring behind icon */}
+        <div
+          className="absolute inset-0 rounded-2xl bg-primary/20 animate-pulse-ring"
+          aria-hidden="true"
+        />
         <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-sm font-bold text-accent-foreground">
           {number}
         </span>
@@ -36,7 +44,50 @@ function StepCard({ number, icon, title, description }: StepCardProps) {
   );
 }
 
-const Aloita = () => {
+function ProcessConnector(): React.ReactNode {
+  return (
+    <>
+      {/* Desktop: horizontal connector line */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-8 hidden lg:block"
+        aria-hidden="true"
+      >
+        <svg className="mx-auto w-full max-w-3xl" viewBox="0 0 800 4" fill="none">
+          <line
+            x1="80"
+            y1="2"
+            x2="720"
+            y2="2"
+            stroke="hsl(var(--primary))"
+            strokeWidth="2"
+            strokeDasharray="8 6"
+            strokeOpacity="0.3"
+          />
+        </svg>
+      </div>
+      {/* Mobile: vertical connector line between steps */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-px sm:hidden"
+        aria-hidden="true"
+      >
+        <svg className="h-full w-1" viewBox="0 0 2 400" preserveAspectRatio="none" fill="none">
+          <line
+            x1="1"
+            y1="40"
+            x2="1"
+            y2="360"
+            stroke="hsl(var(--primary))"
+            strokeWidth="2"
+            strokeDasharray="8 6"
+            strokeOpacity="0.3"
+          />
+        </svg>
+      </div>
+    </>
+  );
+}
+
+const Aloita = (): React.ReactNode => {
   const steps = [
     {
       number: 1,
@@ -79,95 +130,126 @@ const Aloita = () => {
     <Layout>
       <section className="bg-muted/50 py-12 md:py-16">
         <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">Miten aloitamme?</h1>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">
               SmartFlow-alustan käyttöönotto on suoraviivainen prosessi.
             </p>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Käyttöönottoprosessi</h2>
-          <div className="mt-12 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step) => (
-              <StepCard key={step.number} {...step} />
-            ))}
+          <AnimatedSection>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">Käyttöönottoprosessi</h2>
+          </AnimatedSection>
+          <div className="relative mt-12">
+            <ProcessConnector />
+            <StaggeredChildren className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4" stagger={0.12}>
+              {steps.map((step) => (
+                <StaggeredItem key={step.number}>
+                  <StepCard {...step} />
+                </StaggeredItem>
+              ))}
+            </StaggeredChildren>
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="wave" fill="hsl(var(--secondary))" />
 
       <section className="bg-secondary py-16 md:py-24">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <div className="text-center text-secondary-foreground">
+            <AnimatedSection className="text-center text-secondary-foreground">
               <h2 className="text-2xl font-bold sm:text-3xl">Mitä SmartFlow sisältää?</h2>
-            </div>
-            <ul className="mt-10 grid gap-4 text-secondary-foreground sm:grid-cols-2">
+            </AnimatedSection>
+            <StaggeredChildren
+              as="ul"
+              className="mt-10 grid gap-4 text-secondary-foreground sm:grid-cols-2"
+              stagger={0.06}
+            >
               {includedItems.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2
-                    className="mt-0.5 h-5 w-5 shrink-0 text-primary"
-                    aria-hidden="true"
-                  />
-                  <span>{item}</span>
-                </li>
+                <StaggeredItem key={index} as="li">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2
+                      className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                      aria-hidden="true"
+                    />
+                    <span>{item}</span>
+                  </div>
+                </StaggeredItem>
               ))}
-            </ul>
+            </StaggeredChildren>
           </div>
         </div>
       </section>
 
+      <SectionDivider variant="wave" fill="hsl(var(--background))" flip />
+
       <section className="section-padding">
         <div className="container">
-          <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 text-center md:p-12">
-            <h2 className="text-2xl font-bold">Hinnoittelu räätälöidään tarpeisiinne</h2>
-            <p className="mt-4 text-muted-foreground">
-              Hinnoittelu perustuu organisaationne kokoon, käyttäjämäärään ja tarvittaviin
-              integraatioihin.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg">
-                <Link to="/yhteystiedot">
-                  <Calendar className="mr-2 h-5 w-5" aria-hidden="true" />
-                  Varaa demo
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/yhteystiedot">Pyydä tarjous</Link>
-              </Button>
+          <AnimatedSection>
+            <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 text-center md:p-12">
+              <h2 className="text-2xl font-bold">Hinnoittelu räätälöidään tarpeisiinne</h2>
+              <p className="mt-4 text-muted-foreground">
+                Hinnoittelu perustuu organisaationne kokoon, käyttäjämäärään ja tarvittaviin
+                integraatioihin.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Button asChild size="lg">
+                  <Link to="/yhteystiedot">
+                    <Calendar className="mr-2 h-5 w-5" aria-hidden="true" />
+                    Varaa demo
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/yhteystiedot">Pyydä tarjous</Link>
+                </Button>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       <section className="bg-muted/30 py-16 md:py-24">
         <div className="container">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-xl border border-border bg-card p-6">
-              <Users className="h-10 w-10 text-primary" aria-hidden="true" />
-              <h3 className="mt-4 text-lg font-semibold">Koulutus</h3>
-              <p className="mt-2 text-muted-foreground">
-                Koulutamme henkilöstönne käyttämään alustaa tehokkaasti.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-6">
-              <Cog className="h-10 w-10 text-primary" aria-hidden="true" />
-              <h3 className="mt-4 text-lg font-semibold">Tekninen tuki</h3>
-              <p className="mt-2 text-muted-foreground">
-                Asiantuntijatiimimme on käytettävissänne.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-6 md:col-span-2 lg:col-span-1">
-              <Sparkles className="h-10 w-10 text-primary" aria-hidden="true" />
-              <h3 className="mt-4 text-lg font-semibold">Jatkuva kehitys</h3>
-              <p className="mt-2 text-muted-foreground">
-                Uudet ominaisuudet tulevat käyttöönne automaattisesti.
-              </p>
-            </div>
-          </div>
+          <StaggeredChildren className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" stagger={0.1}>
+            <StaggeredItem>
+              <div className="rounded-xl border border-border bg-card p-6">
+                <Users className="h-10 w-10 text-primary animate-float-slow" aria-hidden="true" />
+                <h3 className="mt-4 text-lg font-semibold">Koulutus</h3>
+                <p className="mt-2 text-muted-foreground">
+                  Koulutamme henkilöstönne käyttämään alustaa tehokkaasti.
+                </p>
+              </div>
+            </StaggeredItem>
+            <StaggeredItem>
+              <div className="rounded-xl border border-border bg-card p-6">
+                <Cog
+                  className="h-10 w-10 text-primary animate-float-slow-reverse"
+                  aria-hidden="true"
+                />
+                <h3 className="mt-4 text-lg font-semibold">Tekninen tuki</h3>
+                <p className="mt-2 text-muted-foreground">
+                  Asiantuntijatiimimme on käytettävissänne.
+                </p>
+              </div>
+            </StaggeredItem>
+            <StaggeredItem>
+              <div className="rounded-xl border border-border bg-card p-6 md:col-span-2 lg:col-span-1">
+                <Sparkles
+                  className="h-10 w-10 text-primary animate-float-slow-alt"
+                  aria-hidden="true"
+                />
+                <h3 className="mt-4 text-lg font-semibold">Jatkuva kehitys</h3>
+                <p className="mt-2 text-muted-foreground">
+                  Uudet ominaisuudet tulevat käyttöönne automaattisesti.
+                </p>
+              </div>
+            </StaggeredItem>
+          </StaggeredChildren>
         </div>
       </section>
     </Layout>

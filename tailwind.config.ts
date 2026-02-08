@@ -100,6 +100,36 @@ export default {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(100%)' },
         },
+        'float-slow': {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '33%': { transform: 'translate(15px, -20px)' },
+          '66%': { transform: 'translate(-10px, 10px)' },
+        },
+        'float-slow-reverse': {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '33%': { transform: 'translate(-15px, 15px)' },
+          '66%': { transform: 'translate(10px, -10px)' },
+        },
+        'float-slow-alt': {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '33%': { transform: 'translate(10px, 15px)' },
+          '66%': { transform: 'translate(-15px, -10px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '200% center' },
+          '100%': { backgroundPosition: '-200% center' },
+        },
+        'pulse-ring': {
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'scale(1.4)', opacity: '0' },
+        },
+        glitch: {
+          '0%, 100%': { textShadow: '2px 0 hsl(17 84% 62%), -2px 0 hsl(205 58% 52%)' },
+          '25%': { textShadow: '-2px -1px hsl(17 84% 62%), 2px 1px hsl(205 58% 52%)' },
+          '50%': { textShadow: '1px 2px hsl(17 84% 62%), -1px -2px hsl(205 58% 52%)' },
+          '75%': { textShadow: '-1px 1px hsl(17 84% 62%), 1px -1px hsl(205 58% 52%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -108,6 +138,12 @@ export default {
         'fade-in': 'fade-in 0.4s ease-out forwards',
         'slide-in-right': 'slide-in-right 0.3s ease-out',
         'slide-out-right': 'slide-out-right 0.3s ease-out',
+        'float-slow': 'float-slow 15s ease-in-out infinite',
+        'float-slow-reverse': 'float-slow-reverse 18s ease-in-out infinite',
+        'float-slow-alt': 'float-slow-alt 20s ease-in-out infinite',
+        shimmer: 'shimmer 4s linear infinite',
+        'pulse-ring': 'pulse-ring 2s ease-out infinite',
+        glitch: 'glitch 2s ease-in-out infinite',
       },
       spacing: {
         '18': '4.5rem',
