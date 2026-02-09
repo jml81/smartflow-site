@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Yhteystiedot \u2013 BrightFlow",
+    "description": "Ota meihin yhteytt\u00e4 ja keskustellaan siit\u00e4, miten BrightFlow voi auttaa organisaatiotasi."
+  },
+  "hero": {
+    "title": "Ota yhteytt\u00e4",
+    "subtitle": "Keskustellaan siit\u00e4, miten BrightFlow voi auttaa organisaatiotasi."
+  },
+  "info": {
+    "title": "Yhteystietomme",
+    "subtitle": "Voit ottaa meihin yhteytt\u00e4 suoraan tai t\u00e4ytt\u00e4\u00e4 yhteydenottolomakkeen.",
+    "email": "S\u00e4hk\u00f6posti",
+    "emailValue": "viestinta@antesto.fi",
+    "address": "Osoite",
+    "addressValue": "Antesto Oy, PL 13, 00561 Helsinki",
+    "company": "Yritystiedot",
+    "companyValue": "Antesto Oy, Y-tunnus 3437354-2"
+  },
+  "privacy": {
+    "title": "Tietosuoja",
+    "description": "K\u00e4sittelemme yhteydenottolomakkeen kautta l\u00e4hetett\u00e4v\u00e4t viestit tietoturvallisesti GDPR:n mukaisesti."
+  },
+  "form": {
+    "title": "Yhteydenottolomake",
+    "name": "Nimi",
+    "email": "S\u00e4hk\u00f6postiosoite",
+    "phone": "Puhelin",
+    "organization": "Organisaatio",
+    "message": "Viesti",
+    "submit": "L\u00e4het\u00e4 viesti",
+    "submitting": "L\u00e4hetet\u00e4\u00e4n...",
+    "required": "*"
+  },
+  "validation": {
+    "nameRequired": "Nimi on pakollinen kentt\u00e4",
+    "emailRequired": "S\u00e4hk\u00f6postiosoite on pakollinen kentt\u00e4",
+    "emailInvalid": "Anna kelvollinen s\u00e4hk\u00f6postiosoite",
+    "organizationRequired": "Organisaatio on pakollinen kentt\u00e4",
+    "messageRequired": "Viesti on pakollinen kentt\u00e4",
+    "recaptchaRequired": "Vahvista, ett\u00e4 et ole robotti"
+  },
+  "errors": {
+    "missing_fields": "T\u00e4yt\u00e4 kaikki pakolliset kent\u00e4t.",
+    "invalid_email": "Tarkista s\u00e4hk\u00f6postiosoite.",
+    "recaptcha_required": "Vahvista, ett\u00e4 et ole robotti.",
+    "recaptcha_failed": "reCAPTCHA-tarkistus ep\u00e4onnistui. Yrit\u00e4 uudelleen.",
+    "input_too_long": "Kent\u00e4n sis\u00e4lt\u00f6 on liian pitk\u00e4.",
+    "email_failed": "Viestin l\u00e4hetys ep\u00e4onnistui. Yrit\u00e4 my\u00f6hemmin.",
+    "generic": "Jokin meni pieleen. Yrit\u00e4 uudelleen.",
+    "network": "Yhteysvirhe. Tarkista verkkoyhteytesi ja yrit\u00e4 uudelleen."
+  },
+  "success": {
+    "title": "Kiitos viestist\u00e4si!",
+    "description": "Otamme sinuun yhteytt\u00e4 pian.",
+    "newMessage": "L\u00e4het\u00e4 uusi viesti"
+  }
+}

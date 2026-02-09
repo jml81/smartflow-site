@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Aloita \u2013 BrightFlow",
+    "description": "BrightFlow-alustan k\u00e4ytt\u00f6\u00f6notto on suoraviivainen prosessi."
+  },
+  "hero": {
+    "title": "Miten aloitamme?",
+    "subtitle": "BrightFlow-alustan k\u00e4ytt\u00f6\u00f6notto on suoraviivainen prosessi."
+  },
+  "processTitle": "K\u00e4ytt\u00f6\u00f6nottoprosessi",
+  "steps": [
+    {
+      "title": "Keskustellaan",
+      "description": "Kartoitamme organisaatiosi tarpeet ja tavoitteet."
+    },
+    {
+      "title": "R\u00e4\u00e4t\u00e4l\u00f6id\u00e4\u00e4n",
+      "description": "Suunnittelemme ratkaisun juuri teid\u00e4n prosesseihinne."
+    },
+    {
+      "title": "K\u00e4ytt\u00f6\u00f6notto",
+      "description": "Autamme alustan k\u00e4ytt\u00f6\u00f6notossa ja integroinnissa."
+    },
+    {
+      "title": "Tuotantoon",
+      "description": "BrightFlow on valmis palvelemaan asiakkaitanne."
+    }
+  ],
+  "includedTitle": "Mit\u00e4 BrightFlow sis\u00e4lt\u00e4\u00e4?",
+  "includedItems": [
+    "T\u00e4ysi WCAG AA -saavutettavuus",
+    "ISO27001-tason tietoturva",
+    "GDPR-yhteensopiva tietojenkäsittely",
+    "Hallintaportaali sis\u00e4ll\u00f6n ja ty\u00f6nkulkujen muokkaamiseen",
+    "Kevyt ja vahva tunnistautuminen",
+    "Integraatiot k\u00e4ytt\u00e4j\u00e4hallintaan ja maksupalveluihin",
+    "Viestint\u00e4ominaisuudet (SMS, s\u00e4hk\u00f6posti)",
+    "Tekninen tuki ja koulutus"
+  ],
+  "pricing": {
+    "title": "Hinnoittelu r\u00e4\u00e4t\u00e4l\u00f6id\u00e4\u00e4n tarpeisiinne",
+    "description": "Hinnoittelu perustuu organisaationne kokoon, k\u00e4ytt\u00e4j\u00e4m\u00e4\u00e4r\u00e4\u00e4n ja tarvittaviin integraatioihin.",
+    "ctaDemo": "Varaa demo",
+    "ctaQuote": "Pyyd\u00e4 tarjous"
+  },
+  "support": {
+    "training": {
+      "title": "Koulutus",
+      "description": "Koulutamme henkil\u00f6st\u00f6nne k\u00e4ytt\u00e4m\u00e4\u00e4n alustaa tehokkaasti."
+    },
+    "technical": {
+      "title": "Tekninen tuki",
+      "description": "Asiantuntijatiimimme on k\u00e4ytett\u00e4viss\u00e4nne."
+    },
+    "development": {
+      "title": "Jatkuva kehitys",
+      "description": "Uudet ominaisuudet tulevat k\u00e4ytt\u00f6\u00f6nne automaattisesti."
+    }
+  }
+}

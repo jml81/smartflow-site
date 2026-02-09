@@ -4,99 +4,99 @@
 @tailwind components;
 @tailwind utilities;
 
-/* SmartFlow Design System
+/* BrightFlow Design System
    Brand: Modern, trustworthy, clear, enterprise-focused
-   Colors based on SmartFlow brand guidelines */
+   Colors based on BrightFlow brand guidelines */
 
 @layer base {
   :root {
-    /* SmartFlow Brand Colors - HSL Format */
+    /* BrightFlow Brand Colors - HSL Format */
     --background: 0 0% 100%;
-    --foreground: 216 33% 17%;
+    --foreground: 242 40% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 216 33% 17%;
+    --card-foreground: 242 40% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 216 33% 17%;
+    --popover-foreground: 242 40% 25%;
 
-    /* Primary: SmartFlow Orange #f07b49 */
-    --primary: 17 84% 62%;
+    /* Primary: BrightFlow Coral #E85B7A */
+    --primary: 349 75% 63%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Navy #1e2a3c */
-    --secondary: 216 33% 17%;
+    /* Secondary: Deep Indigo #3D3078 */
+    --secondary: 242 40% 25%;
     --secondary-foreground: 0 0% 100%;
 
     /* Muted colors */
-    --muted: 210 20% 96%;
-    --muted-foreground: 216 20% 45%;
+    --muted: 240 15% 96%;
+    --muted-foreground: 242 15% 45%;
 
-    /* Accent: Blue #3c8ecc */
-    --accent: 205 58% 52%;
+    /* Accent: Sky Blue #4CC9F0 */
+    --accent: 195 85% 62%;
     --accent-foreground: 0 0% 100%;
 
     /* Additional brand colors */
-    --brand-orange-light: 32 86% 62%;
-    --brand-orange-soft: 17 85% 72%;
-    --brand-navy: 216 33% 17%;
-    --brand-blue: 205 58% 52%;
+    --brand-coral-light: 349 75% 72%;
+    --brand-coral-soft: 349 60% 78%;
+    --brand-indigo: 242 40% 25%;
+    --brand-sky: 195 85% 62%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 17 84% 62%;
+    --border: 240 15% 88%;
+    --input: 240 15% 88%;
+    --ring: 349 75% 63%;
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(216 33% 17%) 0%, hsl(216 40% 25%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(17 84% 62%) 0%, hsl(32 86% 62%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(17 84% 62%) 0%, hsl(17 84% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(242 40% 25%) 0%, hsl(242 45% 32%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(349 75% 63%) 0%, hsl(349 75% 72%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(349 75% 63%) 0%, hsl(349 75% 56%) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(216 33% 17% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(216 33% 17% / 0.1), 0 2px 4px -2px hsl(216 33% 17% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(216 33% 17% / 0.1), 0 4px 6px -4px hsl(216 33% 17% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(216 33% 17% / 0.1), 0 8px 10px -6px hsl(216 33% 17% / 0.1);
-    --shadow-glow: 0 0 30px hsl(17 84% 62% / 0.3);
+    --shadow-sm: 0 1px 2px 0 hsl(242 40% 25% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(242 40% 25% / 0.1), 0 2px 4px -2px hsl(242 40% 25% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(242 40% 25% / 0.1), 0 4px 6px -4px hsl(242 40% 25% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(242 40% 25% / 0.1), 0 8px 10px -6px hsl(242 40% 25% / 0.1);
+    --shadow-glow: 0 0 30px hsl(349 75% 63% / 0.3);
 
     /* Animation tokens */
     --transition-spring: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --glow-orange: 0 0 40px hsl(17 84% 62% / 0.2);
-    --glow-blue: 0 0 40px hsl(205 58% 52% / 0.2);
+    --glow-coral: 0 0 40px hsl(349 75% 63% / 0.2);
+    --glow-sky: 0 0 40px hsl(195 85% 62% / 0.2);
   }
 
   .dark {
-    --background: 216 33% 12%;
+    --background: 242 40% 12%;
     --foreground: 0 0% 98%;
 
-    --card: 216 33% 15%;
+    --card: 242 40% 15%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 216 33% 15%;
+    --popover: 242 40% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 17 84% 62%;
+    --primary: 349 75% 63%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 216 25% 25%;
+    --secondary: 242 30% 25%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 216 25% 20%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 242 25% 20%;
+    --muted-foreground: 240 15% 65%;
 
-    --accent: 205 58% 52%;
+    --accent: 195 85% 62%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 216 25% 25%;
-    --input: 216 25% 25%;
-    --ring: 17 84% 62%;
+    --border: 242 25% 25%;
+    --input: 242 25% 25%;
+    --ring: 349 75% 63%;
   }
 }
 
@@ -203,10 +203,10 @@
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(
       110deg,
-      hsl(17 84% 62%) 0%,
-      hsl(32 86% 62%) 45%,
-      hsl(205 58% 52%) 55%,
-      hsl(17 84% 62%) 100%
+      hsl(349 75% 63%) 0%,
+      hsl(349 75% 72%) 45%,
+      hsl(195 85% 62%) 55%,
+      hsl(349 75% 63%) 100%
     );
     background-size: 200% auto;
     animation: shimmer 4s linear infinite;
@@ -244,10 +244,10 @@
 }
 
 @keyframes glitch {
-  0%, 100% { text-shadow: 2px 0 hsl(17 84% 62%), -2px 0 hsl(205 58% 52%); }
-  25% { text-shadow: -2px -1px hsl(17 84% 62%), 2px 1px hsl(205 58% 52%); }
-  50% { text-shadow: 1px 2px hsl(17 84% 62%), -1px -2px hsl(205 58% 52%); }
-  75% { text-shadow: -1px 1px hsl(17 84% 62%), 1px -1px hsl(205 58% 52%); }
+  0%, 100% { text-shadow: 2px 0 hsl(349 75% 63%), -2px 0 hsl(195 85% 62%); }
+  25% { text-shadow: -2px -1px hsl(349 75% 63%), 2px 1px hsl(195 85% 62%); }
+  50% { text-shadow: 1px 2px hsl(349 75% 63%), -1px -2px hsl(195 85% 62%); }
+  75% { text-shadow: -1px 1px hsl(349 75% 63%), 1px -1px hsl(195 85% 62%); }
 }
 
 @keyframes draw-circle {

@@ -1,21 +1,25 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useLocalePath } from '@/hooks/use-locale-path';
 
-export function Footer() {
+export function Footer(): React.ReactNode {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
+  const lp = useLocalePath();
 
   const footerLinks = [
     {
-      title: 'Tuote',
+      title: t('footer.product'),
       links: [
-        { label: 'Ominaisuudet', href: '/ominaisuudet' },
-        { label: 'Ratkaisut', href: '/ratkaisut' },
-        { label: 'Turvallisuus', href: '/turvallisuus-ja-saavutettavuus' },
-        { label: 'Aloita', href: '/aloita' },
+        { label: t('nav.features'), href: lp('features') },
+        { label: t('nav.solutions'), href: lp('solutions') },
+        { label: t('nav.security'), href: lp('security') },
+        { label: t('nav.start'), href: lp('start') },
       ],
     },
     {
-      title: 'Yritys',
-      links: [{ label: 'Yhteystiedot', href: '/yhteystiedot' }],
+      title: t('footer.company'),
+      links: [{ label: t('nav.contact'), href: lp('contact') }],
     },
   ];
 
@@ -24,18 +28,18 @@ export function Footer() {
       <div className="container py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-2 text-xl font-bold">
+            <Link to={lp('home')} className="inline-flex items-center gap-2 text-xl font-bold">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">S</span>
+                <span className="text-lg font-bold text-primary-foreground">
+                  {t('header.brandLetter')}
+                </span>
               </div>
-              <span>SmartFlow</span>
+              <span>{t('header.brandName')}</span>
             </Link>
             <p className="mt-4 max-w-md text-sm text-secondary-foreground/80">
-              Markkinoiden paras sähköisen asioinnin alusta julkisille organisaatioille ja
-              yrityksille. Tarjoa saavutettavia, turvallisia ja yhdenmukaisia digipalveluja
-              asiakkaillesi.
+              {t('footer.description')}
             </p>
-            <p className="mt-4 text-sm font-medium text-primary">SmartFlow, Powered by Antesto</p>
+            <p className="mt-4 text-sm font-medium text-primary">{t('footer.poweredBy')}</p>
           </div>
 
           {footerLinks.map((section) => (
@@ -59,20 +63,20 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-secondary-foreground/10 pt-8 md:flex-row">
           <p className="text-sm text-secondary-foreground/60">
-            &copy; {currentYear} SmartFlow. Kaikki oikeudet pidätetään.
+            {t('footer.copyright', { year: currentYear })}
           </p>
           <div className="flex gap-6">
             <Link
-              to="/turvallisuus-ja-saavutettavuus"
+              to={lp('security')}
               className="inline-block py-2 text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
             >
-              Tietosuoja
+              {t('footer.privacy')}
             </Link>
             <Link
-              to="/turvallisuus-ja-saavutettavuus"
+              to={lp('security')}
               className="inline-block py-2 text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
             >
-              Saavutettavuus
+              {t('footer.accessibility')}
             </Link>
           </div>
         </div>

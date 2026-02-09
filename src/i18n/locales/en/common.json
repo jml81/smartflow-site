@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "solutions": "Solutions",
+    "security": "Security",
+    "start": "Get Started",
+    "contact": "Contact"
+  },
+  "header": {
+    "brandName": "BrightFlow",
+    "brandLetter": "B",
+    "brandAriaLabel": "BrightFlow - Home",
+    "contactCta": "Get in Touch",
+    "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "description": "The leading digital services platform for public organizations and enterprises. Deliver accessible, secure, and consistent digital experiences to your customers.",
+    "poweredBy": "BrightFlow, Powered by Antesto",
+    "product": "Product",
+    "company": "Company",
+    "copyright": "\u00a9 {{year}} BrightFlow. All rights reserved.",
+    "privacy": "Privacy",
+    "accessibility": "Accessibility"
+  },
+  "breadcrumb": {
+    "ariaLabel": "Breadcrumb",
+    "home": "Home",
+    "page": "Page"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "goHome": "Go to Home",
+    "goContact": "Contact Us"
+  },
+  "language": {
+    "fi": "Suomi",
+    "en": "English",
+    "switchLabel": "Change language"
+  },
+  "meta": {
+    "siteName": "BrightFlow"
+  }
+}

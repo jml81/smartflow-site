@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { Layout } from '@/components/layout/Layout';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
+import { usePageMeta } from '@/hooks/use-page-meta';
 import {
   ShieldCheck,
   Lock,
@@ -34,75 +36,45 @@ function InfoCard({ icon, title, description }: InfoCardProps): React.ReactNode 
   );
 }
 
-const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
-  const securityFeatures = [
-    {
-      icon: <ShieldCheck className="h-6 w-6" aria-hidden="true" />,
-      title: 'ISO27001-sertifioitu tietoturva',
-      description: 'SmartFlow täyttää kansainvälisen ISO27001-tietoturvastandardin vaatimukset.',
-    },
-    {
-      icon: <Lock className="h-6 w-6" aria-hidden="true" />,
-      title: 'GDPR-yhteensopivuus',
-      description: 'Kaikki henkilötiedot käsitellään EU:n tietosuoja-asetuksen mukaisesti.',
-    },
-    {
-      icon: <Eye className="h-6 w-6" aria-hidden="true" />,
-      title: 'Tietojen läpinäkyvyys',
-      description: 'Käyttäjille kerrotaan selkeästi, mihin tarkoitukseen tietoja käytetään.',
-    },
-    {
-      icon: <FileCheck className="h-6 w-6" aria-hidden="true" />,
-      title: 'Turvallinen tiedonsiirto',
-      description: 'Kaikki tiedonsiirto tapahtuu salatun yhteyden kautta.',
-    },
-  ];
+const securityIcons = [
+  <ShieldCheck className="h-6 w-6" aria-hidden="true" />,
+  <Lock className="h-6 w-6" aria-hidden="true" />,
+  <Eye className="h-6 w-6" aria-hidden="true" />,
+  <FileCheck className="h-6 w-6" aria-hidden="true" />,
+];
 
-  const accessibilityFeatures = [
-    {
-      icon: <Users2 className="h-6 w-6" aria-hidden="true" />,
-      title: 'WCAG 2.1 AA -tuki',
-      description: 'SmartFlow täyttää lakisääteiset saavutettavuusvaatimukset.',
-    },
-    {
-      icon: <Contrast className="h-6 w-6" aria-hidden="true" />,
-      title: 'Riittävä kontrasti',
-      description: 'Kaikki tekstit ja interaktiiviset elementit täyttävät kontrastivaatimukset.',
-    },
-    {
-      icon: <Keyboard className="h-6 w-6" aria-hidden="true" />,
-      title: 'Näppäimistökäytettävyys',
-      description: 'Kaikki toiminnot ovat käytettävissä näppäimistöllä.',
-    },
-    {
-      icon: <Monitor className="h-6 w-6" aria-hidden="true" />,
-      title: 'Ruudunlukijayhteensopivuus',
-      description: 'Semanttinen HTML ja aria-attribuutit varmistavat yhteensopivuuden.',
-    },
-    {
-      icon: <ListChecks className="h-6 w-6" aria-hidden="true" />,
-      title: 'Selkeä rakenne',
-      description: 'Looginen otsikkohierarkia ja selkeästi merkityt elementit.',
-    },
-    {
-      icon: <FileText className="h-6 w-6" aria-hidden="true" />,
-      title: 'Vaihtoehtoiset tekstit',
-      description: 'Kaikilla informatiivisilla kuvilla on vaihtoehtoiset tekstit.',
-    },
-  ];
+const a11yIcons = [
+  <Users2 className="h-6 w-6" aria-hidden="true" />,
+  <Contrast className="h-6 w-6" aria-hidden="true" />,
+  <Keyboard className="h-6 w-6" aria-hidden="true" />,
+  <Monitor className="h-6 w-6" aria-hidden="true" />,
+  <ListChecks className="h-6 w-6" aria-hidden="true" />,
+  <FileText className="h-6 w-6" aria-hidden="true" />,
+];
+
+const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
+  const { t } = useTranslation('security');
+
+  usePageMeta({
+    title: t('meta.title'),
+    description: t('meta.description'),
+  });
+
+  const securityFeatures = (
+    t('securityItems', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((item, i) => ({ icon: securityIcons[i], ...item }));
+
+  const accessibilityFeatures = (
+    t('accessibilityItems', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((item, i) => ({ icon: a11yIcons[i], ...item }));
 
   return (
     <Layout>
       <section className="bg-muted/50 py-12 md:py-16">
         <div className="container">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-              Turvallisuus ja saavutettavuus
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-              SmartFlow on rakennettu korkeimpien tietoturva- ja saavutettavuusstandardien
-              mukaisesti.
-            </p>
+            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
+            <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
           </AnimatedSection>
         </div>
       </section>
@@ -115,12 +87,12 @@ const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
                 {/* Radial glow behind icon */}
                 <div
                   className="pointer-events-none absolute inset-0 rounded-2xl"
-                  style={{ boxShadow: 'var(--glow-blue)' }}
+                  style={{ boxShadow: 'var(--glow-sky)' }}
                   aria-hidden="true"
                 />
                 <ShieldCheck className="h-8 w-8" aria-hidden="true" />
               </div>
-              <h2 className="text-2xl font-bold sm:text-3xl">Tietoturva</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">{t('securityTitle')}</h2>
             </AnimatedSection>
             <StaggeredChildren className="grid gap-8 md:grid-cols-2" stagger={0.1}>
               {securityFeatures.map((feature, index) => (
@@ -141,12 +113,12 @@ const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
                 {/* Radial glow behind icon */}
                 <div
                   className="pointer-events-none absolute inset-0 rounded-2xl"
-                  style={{ boxShadow: 'var(--glow-orange)' }}
+                  style={{ boxShadow: 'var(--glow-coral)' }}
                   aria-hidden="true"
                 />
                 <Users2 className="h-8 w-8" aria-hidden="true" />
               </div>
-              <h2 className="text-2xl font-bold sm:text-3xl">Saavutettavuus</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">{t('accessibilityTitle')}</h2>
             </AnimatedSection>
             <StaggeredChildren className="grid gap-8 md:grid-cols-2" stagger={0.1}>
               {accessibilityFeatures.map((feature, index) => (
@@ -164,11 +136,8 @@ const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
           <AnimatedSection>
             <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 text-center md:p-12">
               <Lock className="mx-auto h-12 w-12 text-accent" aria-hidden="true" />
-              <h2 className="mt-6 text-2xl font-bold">Tietosuojalupaus</h2>
-              <p className="mt-4 text-muted-foreground">
-                SmartFlow-alustalla henkilötietoja ei yhdistetä tarpeettomasti muuhun dataan.
-                Käytämme pseudonymisointia ja erillisiä tietokantoja oletusarvoisina periaatteina.
-              </p>
+              <h2 className="mt-6 text-2xl font-bold">{t('privacyPromise.title')}</h2>
+              <p className="mt-4 text-muted-foreground">{t('privacyPromise.description')}</p>
             </div>
           </AnimatedSection>
         </div>

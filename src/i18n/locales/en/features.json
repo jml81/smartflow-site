@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "Features \u2013 BrightFlow",
+    "description": "BrightFlow offers a comprehensive set of features for building modern digital services."
+  },
+  "hero": {
+    "title": "Features",
+    "subtitle": "BrightFlow offers a comprehensive set of features for building modern digital services."
+  },
+  "core": {
+    "title": "Core Features",
+    "subtitle": "Everything you need to build and manage digital services.",
+    "items": [
+      {
+        "title": "Admin Portal",
+        "description": "Easily customize content, layouts, services, and workflows with a visual admin portal."
+      },
+      {
+        "title": "Workflow Automation",
+        "description": "Build automated processes that speed up service delivery and reduce manual work."
+      },
+      {
+        "title": "WCAG AA Accessibility",
+        "description": "Meet regulatory accessibility requirements and provide barrier-free services for everyone."
+      },
+      {
+        "title": "Flexible Authentication",
+        "description": "Support for both light and strong authentication to match your organization\u2019s needs."
+      },
+      {
+        "title": "User Management Integration",
+        "description": "Seamlessly connect the platform to your existing user management system."
+      },
+      {
+        "title": "Payment Integrations",
+        "description": "Ready-made connections to leading payment services for secure online transactions."
+      }
+    ]
+  },
+  "technical": {
+    "title": "Technical Strengths",
+    "subtitle": "Modern technology and extensive integrations simplify deployment.",
+    "items": [
+      {
+        "title": "Communication Features",
+        "description": "Send SMS and email messages directly from the platform for customer communication."
+      },
+      {
+        "title": "Click-and-Go Integrations",
+        "description": "Pre-built connectors to key SaaS services accelerate time to market."
+      },
+      {
+        "title": "Modular Architecture",
+        "description": "A scalable, flexible structure that fits organizations of all sizes."
+      },
+      {
+        "title": "Website Integration",
+        "description": "Embed BrightFlow seamlessly into your existing websites with brand-consistent styling."
+      }
+    ]
+  }
+}

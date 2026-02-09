@@ -115,9 +115,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'SmartFlow <noreply@antesto.fi>',
+        from: 'BrightFlow <noreply@antesto.fi>',
         to: ['myynti@antesto.fi'],
-        subject: 'Uusi yhteydenottolomakkeen viesti SmartFlow.fi-sivulta',
+        subject: 'Uusi yhteydenottolomakkeen viesti BrightFlow-sivulta',
         reply_to: email,
         html: `
           <h2>Uusi yhteydenottolomakkeen viesti</h2>

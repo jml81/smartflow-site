@@ -1,36 +1,47 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ChevronRight, Home } from 'lucide-react';
+import { useLocale } from '@/hooks/use-locale';
+import { useLocalePath } from '@/hooks/use-locale-path';
+import { slugToRouteKey, type RouteKey } from '@/i18n/routes';
 
-const routeLabels: Record<string, string> = {
-  '/': 'Etusivu',
-  '/ominaisuudet': 'Ominaisuudet',
-  '/ratkaisut': 'Ratkaisut',
-  '/turvallisuus-ja-saavutettavuus': 'Turvallisuus ja saavutettavuus',
-  '/aloita': 'Aloita',
-  '/yhteystiedot': 'Yhteystiedot',
-};
-
-export function Breadcrumb() {
+export function Breadcrumb(): React.ReactNode {
   const location = useLocation();
-  const currentPath = location.pathname;
+  const { t } = useTranslation();
+  const locale = useLocale();
+  const lp = useLocalePath();
 
-  if (currentPath === '/') {
+  // Extract slug from path: /fi/ominaisuudet → 'ominaisuudet'
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const currentSlug = pathParts[1] ?? '';
+
+  // Hide on home page (no slug or just locale)
+  if (!currentSlug) {
     return null;
   }
 
-  const currentLabel = routeLabels[currentPath] ?? 'Sivu';
+  const routeKey: RouteKey | undefined = slugToRouteKey(currentSlug);
+  const currentLabel = routeKey ? t(`nav.${routeKey}`) : t('breadcrumb.page');
+
+  // Special case: security page uses shorter nav label, show full breadcrumb label
+  const breadcrumbLabel =
+    routeKey === 'security'
+      ? locale === 'fi'
+        ? 'Turvallisuus ja saavutettavuus'
+        : 'Security & Accessibility'
+      : currentLabel;
 
   return (
-    <nav aria-label="Murupolku" className="container py-4">
+    <nav aria-label={t('breadcrumb.ariaLabel')} className="container py-4">
       <ol className="flex items-center gap-2 text-sm">
         <li>
           <Link
-            to="/"
+            to={lp('home')}
             className="flex items-center gap-1 rounded-sm px-1 py-1 text-muted-foreground transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            aria-label="Etusivu"
+            aria-label={t('breadcrumb.home')}
           >
             <Home className="h-4 w-4" aria-hidden="true" />
-            <span className="hidden sm:inline">Etusivu</span>
+            <span className="hidden sm:inline">{t('breadcrumb.home')}</span>
           </Link>
         </li>
         <li aria-hidden="true">
@@ -38,7 +49,7 @@ export function Breadcrumb() {
         </li>
         <li>
           <span className="font-medium text-foreground" aria-current="page">
-            {currentLabel}
+            {breadcrumbLabel}
           </span>
         </li>
       </ol>

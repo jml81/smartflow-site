@@ -11,9 +11,9 @@ export function HeroBackground({ className }: HeroBackgroundProps): React.ReactN
       aria-hidden="true"
     >
       {/* Animated gradient orbs */}
-      <div className="absolute -left-[200px] -top-[200px] h-[600px] w-[600px] rounded-full bg-[hsl(17_84%_62%/0.15)] blur-[120px] animate-float-slow" />
-      <div className="absolute -right-[150px] top-[20%] hidden h-[500px] w-[500px] rounded-full bg-[hsl(205_58%_52%/0.12)] blur-[100px] animate-float-slow-reverse md:block" />
-      <div className="absolute -bottom-[100px] left-[30%] hidden h-[400px] w-[400px] rounded-full bg-[hsl(216_33%_17%/0.20)] blur-[80px] animate-float-slow-alt md:block" />
+      <div className="absolute -left-[200px] -top-[200px] h-[600px] w-[600px] rounded-full bg-[hsl(349_75%_63%/0.15)] blur-[120px] animate-float-slow" />
+      <div className="absolute -right-[150px] top-[20%] hidden h-[500px] w-[500px] rounded-full bg-[hsl(195_85%_62%/0.12)] blur-[100px] animate-float-slow-reverse md:block" />
+      <div className="absolute -bottom-[100px] left-[30%] hidden h-[400px] w-[400px] rounded-full bg-[hsl(242_40%_25%/0.20)] blur-[80px] animate-float-slow-alt md:block" />
 
       {/* SVG dot grid pattern */}
       <svg

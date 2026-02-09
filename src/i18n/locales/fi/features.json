@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "Ominaisuudet \u2013 BrightFlow",
+    "description": "BrightFlow tarjoaa kattavan valikoiman ominaisuuksia modernin digitaalisen asioinnin rakentamiseen."
+  },
+  "hero": {
+    "title": "Ominaisuudet",
+    "subtitle": "BrightFlow tarjoaa kattavan valikoiman ominaisuuksia modernin digitaalisen asioinnin rakentamiseen."
+  },
+  "core": {
+    "title": "Keskeiset ominaisuudet",
+    "subtitle": "Kaikki mit\u00e4 tarvitset s\u00e4hk\u00f6isen asioinnin rakentamiseen ja hallintaan.",
+    "items": [
+      {
+        "title": "Hallintaportaali",
+        "description": "Muokkaa sis\u00e4lt\u00f6\u00e4, ulkoasua, palveluita ja ty\u00f6nkulkuja helposti visuaalisella hallintaportaalilla."
+      },
+      {
+        "title": "Ty\u00f6nkulkujen automatisointi",
+        "description": "Rakenna automatisoituja prosesseja, jotka nopeuttavat asiointia ja v\u00e4hent\u00e4v\u00e4t manuaalista ty\u00f6t\u00e4."
+      },
+      {
+        "title": "WCAG AA -saavutettavuus",
+        "description": "T\u00e4yt\u00e4 lakis\u00e4\u00e4teiset saavutettavuusvaatimukset ja tarjoa esteett\u00f6m\u00e4t palvelut kaikille."
+      },
+      {
+        "title": "Monipuolinen tunnistautuminen",
+        "description": "Tuki sek\u00e4 kevyelle ett\u00e4 vahvalle tunnistautumiselle organisaation tarpeiden mukaan."
+      },
+      {
+        "title": "K\u00e4ytt\u00e4j\u00e4hallintaintegraatio",
+        "description": "Kytke alusta olemassa olevaan k\u00e4ytt\u00e4j\u00e4hallintaj\u00e4rjestelm\u00e4\u00e4n saumattomasti."
+      },
+      {
+        "title": "Maksupalveluintegraatiot",
+        "description": "Valmiit kytkenn\u00e4t yleisimpiin maksupalveluihin turvallisen verkkomaksamisen mahdollistamiseksi."
+      }
+    ]
+  },
+  "technical": {
+    "title": "Tekniset vahvuudet",
+    "subtitle": "Moderni teknologia ja laaja integroitavuus helpottavat k\u00e4ytt\u00f6\u00f6nottoa.",
+    "items": [
+      {
+        "title": "Viestint\u00e4ominaisuudet",
+        "description": "L\u00e4het\u00e4 tekstiviestej\u00e4 ja s\u00e4hk\u00f6posteja suoraan alustalta asiakasviestint\u00e4\u00e4n."
+      },
+      {
+        "title": "Click-and-go-integraatiot",
+        "description": "Valmiit liit\u00e4nn\u00e4t keskeisiin SaaS-palveluihin nopeuttavat k\u00e4ytt\u00f6\u00f6nottoa."
+      },
+      {
+        "title": "Modulaarinen arkkitehtuuri",
+        "description": "Skaalautuva ja joustava rakenne, joka sopii monen kokoisille organisaatioille."
+      },
+      {
+        "title": "Verkkosivuintegraatio",
+        "description": "Upota BrightFlow saumattomasti olemassa oleviin verkkosivuihin br\u00e4ndin mukaisesti."
+      }
+    ]
+  }
+}

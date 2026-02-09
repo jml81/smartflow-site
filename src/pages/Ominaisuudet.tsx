@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { Layout } from '@/components/layout/Layout';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
+import { usePageMeta } from '@/hooks/use-page-meta';
 import {
   Palette,
   Workflow,
@@ -34,68 +36,37 @@ function FeatureDetail({ icon, title, description }: FeatureDetailProps): React.
   );
 }
 
-const Ominaisuudet = (): React.ReactNode => {
-  const coreFeatures = [
-    {
-      icon: <Palette className="h-6 w-6" aria-hidden="true" />,
-      title: 'Hallintaportaali',
-      description:
-        'Muokkaa sisältöä, ulkoasua, palveluita ja työnkulkuja helposti visuaalisella hallintaportaalilla.',
-    },
-    {
-      icon: <Workflow className="h-6 w-6" aria-hidden="true" />,
-      title: 'Työnkulkujen automatisointi',
-      description:
-        'Rakenna automatisoituja prosesseja, jotka nopeuttavat asiointia ja vähentävät manuaalista työtä.',
-    },
-    {
-      icon: <ShieldCheck className="h-6 w-6" aria-hidden="true" />,
-      title: 'WCAG AA -saavutettavuus',
-      description:
-        'Täytä lakisääteiset saavutettavuusvaatimukset ja tarjoa esteettömät palvelut kaikille.',
-    },
-    {
-      icon: <KeyRound className="h-6 w-6" aria-hidden="true" />,
-      title: 'Monipuolinen tunnistautuminen',
-      description:
-        'Tuki sekä kevyelle että vahvalle tunnistautumiselle organisaation tarpeiden mukaan.',
-    },
-    {
-      icon: <Link2 className="h-6 w-6" aria-hidden="true" />,
-      title: 'Käyttäjähallintaintegraatio',
-      description: 'Kytke alusta olemassa olevaan käyttäjähallintajärjestelmään saumattomasti.',
-    },
-    {
-      icon: <CreditCard className="h-6 w-6" aria-hidden="true" />,
-      title: 'Maksupalveluintegraatiot',
-      description:
-        'Valmiit kytkennät yleisimpiin maksupalveluihin turvallisen verkkomaksamisen mahdollistamiseksi.',
-    },
-  ];
+const coreIcons = [
+  <Palette className="h-6 w-6" aria-hidden="true" />,
+  <Workflow className="h-6 w-6" aria-hidden="true" />,
+  <ShieldCheck className="h-6 w-6" aria-hidden="true" />,
+  <KeyRound className="h-6 w-6" aria-hidden="true" />,
+  <Link2 className="h-6 w-6" aria-hidden="true" />,
+  <CreditCard className="h-6 w-6" aria-hidden="true" />,
+];
 
-  const technicalFeatures = [
-    {
-      icon: <MessageSquare className="h-6 w-6" aria-hidden="true" />,
-      title: 'Viestintäominaisuudet',
-      description: 'Lähetä tekstiviestejä ja sähköposteja suoraan alustalta asiakasviestintään.',
-    },
-    {
-      icon: <Blocks className="h-6 w-6" aria-hidden="true" />,
-      title: 'Click-and-go-integraatiot',
-      description: 'Valmiit liitännät keskeisiin SaaS-palveluihin nopeuttavat käyttöönottoa.',
-    },
-    {
-      icon: <Layers className="h-6 w-6" aria-hidden="true" />,
-      title: 'Modulaarinen arkkitehtuuri',
-      description: 'Skaalautuva ja joustava rakenne, joka sopii monen kokoisille organisaatioille.',
-    },
-    {
-      icon: <Globe className="h-6 w-6" aria-hidden="true" />,
-      title: 'Verkkosivuintegraatio',
-      description:
-        'Upota SmartFlow saumattomasti olemassa oleviin verkkosivuihin brändin mukaisesti.',
-    },
-  ];
+const techIcons = [
+  <MessageSquare className="h-6 w-6" aria-hidden="true" />,
+  <Blocks className="h-6 w-6" aria-hidden="true" />,
+  <Layers className="h-6 w-6" aria-hidden="true" />,
+  <Globe className="h-6 w-6" aria-hidden="true" />,
+];
+
+const Ominaisuudet = (): React.ReactNode => {
+  const { t } = useTranslation('features');
+
+  usePageMeta({
+    title: t('meta.title'),
+    description: t('meta.description'),
+  });
+
+  const coreFeatures = (
+    t('core.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((item, i) => ({ icon: coreIcons[i], ...item }));
+
+  const technicalFeatures = (
+    t('technical.items', { returnObjects: true }) as { title: string; description: string }[]
+  ).map((item, i) => ({ icon: techIcons[i], ...item }));
 
   return (
     <Layout>
@@ -105,17 +76,14 @@ const Ominaisuudet = (): React.ReactNode => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse at 50% 0%, hsl(17 84% 62% / 0.06), transparent 60%)',
+              'radial-gradient(ellipse at 50% 0%, hsl(349 75% 63% / 0.06), transparent 60%)',
           }}
           aria-hidden="true"
         />
         <div className="container relative">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">Ominaisuudet</h1>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-              SmartFlow tarjoaa kattavan valikoiman ominaisuuksia modernin digitaalisen asioinnin
-              rakentamiseen.
-            </p>
+            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
+            <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
           </AnimatedSection>
         </div>
       </section>
@@ -123,9 +91,9 @@ const Ominaisuudet = (): React.ReactNode => {
       <section className="section-padding">
         <div className="container">
           <AnimatedSection>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">Keskeiset ominaisuudet</h2>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">{t('core.title')}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-              Kaikki mitä tarvitset sähköisen asioinnin rakentamiseen ja hallintaan.
+              {t('core.subtitle')}
             </p>
           </AnimatedSection>
           <StaggeredChildren
@@ -144,9 +112,9 @@ const Ominaisuudet = (): React.ReactNode => {
       <section className="bg-muted/30 py-16 md:py-24">
         <div className="container">
           <AnimatedSection>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">Tekniset vahvuudet</h2>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">{t('technical.title')}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-              Moderni teknologia ja laaja integroitavuus helpottavat käyttöönottoa.
+              {t('technical.subtitle')}
             </p>
           </AnimatedSection>
           <StaggeredChildren
