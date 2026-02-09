@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Turvallisuus ja saavutettavuus \u2013 BrightFlow",
+    "description": "BrightFlow on rakennettu korkeimpien tietoturva- ja saavutettavuusstandardien mukaisesti."
+  },
+  "hero": {
+    "title": "Turvallisuus ja saavutettavuus",
+    "subtitle": "BrightFlow on rakennettu korkeimpien tietoturva- ja saavutettavuusstandardien mukaisesti."
+  },
+  "securityTitle": "Tietoturva",
+  "securityItems": [
+    {
+      "title": "ISO27001-sertifioitu tietoturva",
+      "description": "BrightFlow t\u00e4ytt\u00e4\u00e4 kansainv\u00e4lisen ISO27001-tietoturvastandardin vaatimukset."
+    },
+    {
+      "title": "GDPR-yhteensopivuus",
+      "description": "Kaikki henkil\u00f6tiedot k\u00e4sitell\u00e4\u00e4n EU:n tietosuoja-asetuksen mukaisesti."
+    },
+    {
+      "title": "Tietojen l\u00e4pin\u00e4kyvyys",
+      "description": "K\u00e4ytt\u00e4jille kerrotaan selke\u00e4sti, mihin tarkoitukseen tietoja k\u00e4ytet\u00e4\u00e4n."
+    },
+    {
+      "title": "Turvallinen tiedonsiirto",
+      "description": "Kaikki tiedonsiirto tapahtuu salatun yhteyden kautta."
+    }
+  ],
+  "accessibilityTitle": "Saavutettavuus",
+  "accessibilityItems": [
+    {
+      "title": "WCAG 2.1 AA -tuki",
+      "description": "BrightFlow t\u00e4ytt\u00e4\u00e4 lakis\u00e4\u00e4teiset saavutettavuusvaatimukset."
+    },
+    {
+      "title": "Riitt\u00e4v\u00e4 kontrasti",
+      "description": "Kaikki tekstit ja interaktiiviset elementit t\u00e4ytt\u00e4v\u00e4t kontrastivaatimukset."
+    },
+    {
+      "title": "N\u00e4pp\u00e4imist\u00f6k\u00e4ytett\u00e4vyys",
+      "description": "Kaikki toiminnot ovat k\u00e4ytett\u00e4viss\u00e4 n\u00e4pp\u00e4imist\u00f6ll\u00e4."
+    },
+    {
+      "title": "Ruudunlukijayhteensopivuus",
+      "description": "Semanttinen HTML ja aria-attribuutit varmistavat yhteensopivuuden."
+    },
+    {
+      "title": "Selke\u00e4 rakenne",
+      "description": "Looginen otsikkohierarkia ja selke\u00e4sti merkityt elementit."
+    },
+    {
+      "title": "Vaihtoehtoiset tekstit",
+      "description": "Kaikilla informatiivisilla kuvilla on vaihtoehtoiset tekstit."
+    }
+  ],
+  "privacyPromise": {
+    "title": "Tietosuojalupaus",
+    "description": "BrightFlow-alustalla henkil\u00f6tietoja ei yhdistet\u00e4 tarpeettomasti muuhun dataan. K\u00e4yt\u00e4mme pseudonymisointia ja erillisi\u00e4 tietokantoja oletusarvoisina periaatteina."
+  }
+}

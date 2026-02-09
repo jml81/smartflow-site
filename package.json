@@ -1,5 +1,5 @@
 {
-  "name": "smartflow-site",
+  "name": "brightflow-site",
   "private": true,
   "version": "0.1.0",
   "packageManager": "pnpm@10.28.2",
@@ -15,8 +15,8 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,json,css}'",
-    "deploy:preview": "pnpm build && wrangler pages deploy dist --project-name=smartflow-site --branch=preview",
-    "deploy:prod": "pnpm build && wrangler pages deploy dist --project-name=smartflow-site",
+    "deploy:preview": "pnpm build && wrangler pages deploy dist --project-name=brightflow-site --branch=preview",
+    "deploy:prod": "pnpm build && wrangler pages deploy dist --project-name=brightflow-site",
     "prepare": "husky"
   },
   "dependencies": {
@@ -26,11 +26,14 @@
     "@radix-ui/react-tooltip": "^1.2.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "i18next": "^25.8.4",
+    "i18next-browser-languagedetector": "^8.2.0",
     "lucide-react": "^0.462.0",
     "motion": "^12.33.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-google-recaptcha": "^3.1.0",
+    "react-i18next": "^16.5.4",
     "react-router-dom": "^6.30.1",
     "sonner": "^1.7.4",
     "tailwind-merge": "^2.6.0",

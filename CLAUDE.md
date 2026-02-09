@@ -1,4 +1,4 @@
-# Project: smartflow-site
+# Project: brightflow-site
 
 ## Environment Constraints
 
@@ -14,7 +14,9 @@
 - Package manager: pnpm (always, never npm or yarn)
 - Framework: React 19 + Vite + TypeScript + Tailwind CSS 3 + shadcn/ui
 - UI: Radix UI primitives, Lucide icons, class-variance-authority
-- Routing: react-router-dom v6
+- Routing: react-router-dom v6 with locale-prefixed paths
+- i18n: react-i18next + i18next + i18next-browser-languagedetector
+- Animations: motion (LazyMotion + m components for tree-shaking)
 - Testing: Vitest for unit/integration, Playwright for e2e (CI only)
 - Linting: ESLint flat config + Prettier
 - Deploy: Cloudflare Pages via wrangler
@@ -22,12 +24,28 @@
 
 ## Brand Identity
 
-- Primary: SmartFlow Orange #f07b49 (HSL: 17 84% 62%)
-- Secondary: Navy #1e2a3c (HSL: 216 33% 17%)
-- Accent: Blue #3c8ecc (HSL: 205 58% 52%)
+- Primary (Coral): #E85B7A (HSL: 349 75% 63%)
+- Secondary (Indigo): #3D3078 (HSL: 242 40% 25%)
+- Accent (Sky Blue): #4CC9F0 (HSL: 195 85% 62%)
+- Coral Light: #EF8499 | Coral Soft: #E8A8B5
 - Font: Inter (300-800 weights)
 - Design tokens defined in src/index.css as CSS custom properties
 - All color references use HSL via CSS variables
+- Glow effects: --glow-coral, --glow-sky (not orange/blue)
+
+## i18n Architecture
+
+- Languages: Finnish (fi, default) and English (en)
+- URL strategy: locale-prefixed paths with localized slugs
+  - Finnish: /fi/, /fi/ominaisuudet, /fi/ratkaisut, etc.
+  - English: /en/, /en/features, /en/solutions, etc.
+- Translation files: src/i18n/locales/{fi,en}/\*.json (7 namespaces each)
+  - common, home, features, solutions, security, start, contact
+- Route management: src/i18n/routes.ts (localePath, switchLocalePath, slugToRouteKey)
+- Hooks: useLocale, useLocalePath, usePageMeta
+- Layout components: LocaleLayout (validates locale, injects hreflang), LocaleRedirect (root redirect)
+- Language detection: URL path > localStorage (brightflow-lang) > browser language > fi
+- Adding a new language: create locale folder with 7 JSON files, add to i18n/index.ts resources, add slugs to routes.ts, add routes in App.tsx
 
 ## Project Commands
 

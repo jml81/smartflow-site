@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "BrightFlow \u2013 The Leading Digital Services Platform",
+    "description": "Deliver seamless, accessible, and secure digital services to your customers with a consistent user experience."
+  },
+  "hero": {
+    "title": "BrightFlow \u2013 the leading",
+    "titleHighlight": "digital services",
+    "titleEnd": "platform",
+    "subtitle": "Deliver seamless, accessible, and secure digital services to your customers with a consistent user experience.",
+    "ctaDemo": "Book a Demo",
+    "ctaFeatures": "Explore Features"
+  },
+  "integration": {
+    "title": "Seamless Integration with Existing Systems",
+    "description": "BrightFlow integrates effortlessly with your existing websites and back-end systems. Deliver a unified service experience regardless of the service channel and maintain consistent branding throughout the entire customer journey."
+  },
+  "features": {
+    "title": "Why Choose BrightFlow?",
+    "subtitle": "Built to meet the demands of modern digital service delivery.",
+    "items": [
+      {
+        "title": "Outstanding Accessibility",
+        "description": "WCAG AA-level accessibility ensures all users can access services smoothly."
+      },
+      {
+        "title": "Best-in-Class User Experience",
+        "description": "An intuitive, user-friendly interface designed with the end user in mind."
+      },
+      {
+        "title": "Modern Technology",
+        "description": "Ready-made click-and-go integrations with key SaaS services accelerate deployment."
+      },
+      {
+        "title": "Enterprise-Grade Security",
+        "description": "ISO 27001-certified security and GDPR compliance ensure data protection."
+      }
+    ]
+  },
+  "benefits": {
+    "orgTitle": "As Our Customer, You Get",
+    "orgItems": [
+      "An admin portal to manage content, layouts, services, and workflows",
+      "Light or strong authentication options",
+      "Integration with your existing user management system",
+      "Connections to leading payment services",
+      "SMS and email messaging directly from the platform"
+    ],
+    "customerTitle": "Your Customers Get",
+    "customerItems": [
+      "Easy-to-use and consistent digital services",
+      "The ability to view and update their own information",
+      "A clear view of their service history",
+      "Real-time tracking of pending requests"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Get in touch and let\u2019s explore how BrightFlow can streamline your organization\u2019s digital services.",
+    "contact": "Get in Touch",
+    "pricing": "View Pricing"
+  }
+}

@@ -61,13 +61,13 @@ export default {
           foreground: 'hsl(var(--card-foreground))',
         },
         brand: {
-          orange: {
-            DEFAULT: '#f07b49',
-            light: '#f2af4c',
-            soft: '#f49d78',
+          coral: {
+            DEFAULT: '#E85B7A',
+            light: '#EF8499',
+            soft: '#E8A8B5',
           },
-          navy: '#1e2a3c',
-          blue: '#3c8ecc',
+          indigo: '#3D3078',
+          sky: '#4CC9F0',
         },
       },
       borderRadius: {
@@ -125,10 +125,10 @@ export default {
           '100%': { transform: 'scale(1.4)', opacity: '0' },
         },
         glitch: {
-          '0%, 100%': { textShadow: '2px 0 hsl(17 84% 62%), -2px 0 hsl(205 58% 52%)' },
-          '25%': { textShadow: '-2px -1px hsl(17 84% 62%), 2px 1px hsl(205 58% 52%)' },
-          '50%': { textShadow: '1px 2px hsl(17 84% 62%), -1px -2px hsl(205 58% 52%)' },
-          '75%': { textShadow: '-1px 1px hsl(17 84% 62%), 1px -1px hsl(205 58% 52%)' },
+          '0%, 100%': { textShadow: '2px 0 hsl(349 75% 63%), -2px 0 hsl(195 85% 62%)' },
+          '25%': { textShadow: '-2px -1px hsl(349 75% 63%), 2px 1px hsl(195 85% 62%)' },
+          '50%': { textShadow: '1px 2px hsl(349 75% 63%), -1px -2px hsl(195 85% 62%)' },
+          '75%': { textShadow: '-1px 1px hsl(349 75% 63%), 1px -1px hsl(195 85% 62%)' },
         },
       },
       animation: {

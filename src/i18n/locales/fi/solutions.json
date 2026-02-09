@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Ratkaisut \u2013 BrightFlow",
+    "description": "BrightFlow sopii julkisille organisaatioille ja yrityksille, joilla on tiukat vaatimukset tietoturvalle ja saavutettavuudelle."
+  },
+  "hero": {
+    "title": "Ratkaisut eri toimialoille",
+    "subtitle": "BrightFlow sopii julkisille organisaatioille ja yrityksille, joilla on tiukat vaatimukset tietoturvalle ja saavutettavuudelle."
+  },
+  "cards": [
+    {
+      "title": "Kunnat ja kaupungit",
+      "description": "Tarjoa kuntalaisille yhten\u00e4inen digitaalinen asiointikokemus kaikissa kunnan palveluissa.",
+      "benefits": [
+        "Yhten\u00e4inen asiointialusta kaikille kunnan palveluille",
+        "Lupahakemusten ja ilmoitusten s\u00e4hk\u00f6inen k\u00e4sittely",
+        "Asukkaiden tietojen hallinta ja p\u00e4ivitys",
+        "Maksujen vastaanotto suoraan alustalla"
+      ]
+    },
+    {
+      "title": "Virastot ja viranomaiset",
+      "description": "Digitalisoi viranomaispalvelut turvallisesti ja saavutettavasti.",
+      "benefits": [
+        "Vahvan tunnistautumisen integraatiot",
+        "ISO27001-tason tietoturva",
+        "T\u00e4ysi WCAG AA -saavutettavuus",
+        "Automaattiset ty\u00f6nkulut ja ilmoitukset"
+      ]
+    },
+    {
+      "title": "Hyvinvointialueet",
+      "description": "Rakenna sujuva digitaalinen asiointipolku sosiaali- ja terveyspalveluihin.",
+      "benefits": [
+        "Ajanvaraus ja jonotusnumeroiden hallinta",
+        "Asiointihistorian seuranta",
+        "Turvallinen tiedonsiirto ja viestint\u00e4",
+        "Integraatiot potilastietoj\u00e4rjestelmiin"
+      ]
+    },
+    {
+      "title": "Yritykset ja palveluorganisaatiot",
+      "description": "Paranna asiakaskokemusta ja tehosta digitaalista palvelua.",
+      "benefits": [
+        "Asiakasportaali omien tietojen hallintaan",
+        "Tilausten ja laskujen seuranta",
+        "Tukipyynt\u00f6jen ja palautteiden k\u00e4sittely",
+        "Integraatiot CRM- ja ERP-j\u00e4rjestelmiin"
+      ]
+    }
+  ],
+  "cardCta": "Keskustellaan tarpeistanne",
+  "bottomSection": {
+    "title": "Kenelle BrightFlow on tarkoitettu?",
+    "description": "BrightFlow on suunniteltu organisaatioille, jotka haluavat tarjota asiakkailleen yhdenmukaisen, helppok\u00e4ytt\u00f6isen ja turvallisen digitaalisen asiointikokemuksen.",
+    "cta": "Ota yhteytt\u00e4"
+  }
+}

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useTranslation } from 'react-i18next';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
+import { usePageMeta } from '@/hooks/use-page-meta';
 import { Mail, MapPin, Send, AlertCircle, Building } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -83,6 +85,7 @@ function SuccessCheckmark(): React.ReactNode {
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 const Yhteystiedot = (): React.ReactNode => {
+  const { t } = useTranslation('contact');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -96,18 +99,24 @@ const Yhteystiedot = (): React.ReactNode => {
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
+  usePageMeta({
+    title: t('meta.title'),
+    description: t('meta.description'),
+  });
+
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = 'Nimi on pakollinen kenttä';
+    if (!formData.name.trim()) newErrors.name = t('validation.nameRequired');
     if (!formData.email.trim()) {
-      newErrors.email = 'Sähköpostiosoite on pakollinen kenttä';
+      newErrors.email = t('validation.emailRequired');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Anna kelvollinen sähköpostiosoite';
+      newErrors.email = t('validation.emailInvalid');
     }
-    if (!formData.organization.trim()) newErrors.organization = 'Organisaatio on pakollinen kenttä';
-    if (!formData.message.trim()) newErrors.message = 'Viesti on pakollinen kenttä';
+    if (!formData.organization.trim())
+      newErrors.organization = t('validation.organizationRequired');
+    if (!formData.message.trim()) newErrors.message = t('validation.messageRequired');
     if (RECAPTCHA_SITE_KEY && !recaptchaToken) {
-      newErrors.recaptcha = 'Vahvista, että et ole robotti';
+      newErrors.recaptcha = t('validation.recaptchaRequired');
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -141,15 +150,9 @@ const Yhteystiedot = (): React.ReactNode => {
       const result = (await response.json()) as { success: boolean; error?: string };
 
       if (!result.success) {
-        const errorMessages: Record<string, string> = {
-          missing_fields: 'Täytä kaikki pakolliset kentät.',
-          invalid_email: 'Tarkista sähköpostiosoite.',
-          recaptcha_required: 'Vahvista, että et ole robotti.',
-          recaptcha_failed: 'reCAPTCHA-tarkistus epäonnistui. Yritä uudelleen.',
-          input_too_long: 'Kentän sisältö on liian pitkä.',
-          email_failed: 'Viestin lähetys epäonnistui. Yritä myöhemmin.',
-        };
-        toast.error(errorMessages[result.error ?? ''] ?? 'Jokin meni pieleen. Yritä uudelleen.');
+        const errorKey = result.error ?? '';
+        const errorMsg = t(`errors.${errorKey}`, { defaultValue: t('errors.generic') });
+        toast.error(errorMsg);
         recaptchaRef.current?.reset();
         setRecaptchaToken(null);
         return;
@@ -157,7 +160,7 @@ const Yhteystiedot = (): React.ReactNode => {
 
       setIsSubmitted(true);
     } catch {
-      toast.error('Yhteysvirhe. Tarkista verkkoyhteytesi ja yritä uudelleen.');
+      toast.error(t('errors.network'));
       recaptchaRef.current?.reset();
       setRecaptchaToken(null);
     } finally {
@@ -170,10 +173,8 @@ const Yhteystiedot = (): React.ReactNode => {
       <section className="bg-muted/50 py-12 md:py-16">
         <div className="container">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">Ota yhteyttä</h1>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-              Keskustellaan siitä, miten SmartFlow voi auttaa organisaatiotasi.
-            </p>
+            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
+            <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
           </AnimatedSection>
         </div>
       </section>
@@ -183,40 +184,35 @@ const Yhteystiedot = (): React.ReactNode => {
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <AnimatedSection direction="left">
-                <h2 className="text-2xl font-bold">Yhteystietomme</h2>
-                <p className="mt-4 text-muted-foreground">
-                  Voit ottaa meihin yhteyttä suoraan tai täyttää yhteydenottolomakkeen.
-                </p>
+                <h2 className="text-2xl font-bold">{t('info.title')}</h2>
+                <p className="mt-4 text-muted-foreground">{t('info.subtitle')}</p>
                 <StaggeredChildren className="mt-8 space-y-6" stagger={0.1}>
                   <StaggeredItem>
                     <ContactInfo
                       icon={<Mail className="h-5 w-5" aria-hidden="true" />}
-                      title="Sähköposti"
-                      content="viestinta@antesto.fi"
-                      href="mailto:viestinta@antesto.fi"
+                      title={t('info.email')}
+                      content={t('info.emailValue')}
+                      href={`mailto:${t('info.emailValue')}`}
                     />
                   </StaggeredItem>
                   <StaggeredItem>
                     <ContactInfo
                       icon={<MapPin className="h-5 w-5" aria-hidden="true" />}
-                      title="Osoite"
-                      content="Antesto Oy, PL 13, 00561 Helsinki"
+                      title={t('info.address')}
+                      content={t('info.addressValue')}
                     />
                   </StaggeredItem>
                   <StaggeredItem>
                     <ContactInfo
                       icon={<Building className="h-5 w-5" aria-hidden="true" />}
-                      title="Yritystiedot"
-                      content="Antesto Oy, Y-tunnus 3437354-2"
+                      title={t('info.company')}
+                      content={t('info.companyValue')}
                     />
                   </StaggeredItem>
                 </StaggeredChildren>
                 <div className="mt-10 rounded-xl border border-border bg-muted/50 p-6">
-                  <h3 className="font-semibold">Tietosuoja</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Käsittelemme yhteydenottolomakkeen kautta lähetettävät viestit
-                    tietoturvallisesti GDPR:n mukaisesti.
-                  </p>
+                  <h3 className="font-semibold">{t('privacy.title')}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{t('privacy.description')}</p>
                 </div>
               </AnimatedSection>
 
@@ -224,8 +220,8 @@ const Yhteystiedot = (): React.ReactNode => {
                 {isSubmitted ? (
                   <div className="rounded-2xl border border-border bg-card p-8 text-center">
                     <SuccessCheckmark />
-                    <h2 className="mt-6 text-2xl font-bold">Kiitos viestistäsi!</h2>
-                    <p className="mt-4 text-muted-foreground">Otamme sinuun yhteyttä pian.</p>
+                    <h2 className="mt-6 text-2xl font-bold">{t('success.title')}</h2>
+                    <p className="mt-4 text-muted-foreground">{t('success.description')}</p>
                     <Button
                       className="mt-8"
                       onClick={() => {
@@ -241,7 +237,7 @@ const Yhteystiedot = (): React.ReactNode => {
                         recaptchaRef.current?.reset();
                       }}
                     >
-                      Lähetä uusi viesti
+                      {t('success.newMessage')}
                     </Button>
                   </div>
                 ) : (
@@ -250,13 +246,13 @@ const Yhteystiedot = (): React.ReactNode => {
                     className="rounded-2xl border border-border bg-card p-6 md:p-8"
                     noValidate
                   >
-                    <h2 className="text-xl font-bold">Yhteydenottolomake</h2>
+                    <h2 className="text-xl font-bold">{t('form.title')}</h2>
                     <div className="mt-6 space-y-5">
                       <div>
                         <Label htmlFor="name">
-                          Nimi{' '}
+                          {t('form.name')}{' '}
                           <span className="text-destructive" aria-hidden="true">
-                            *
+                            {t('form.required')}
                           </span>
                         </Label>
                         <Input
@@ -265,7 +261,7 @@ const Yhteystiedot = (): React.ReactNode => {
                           type="text"
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-2 focus:shadow-[var(--glow-orange)]"
+                          className="mt-2 focus:shadow-[var(--glow-coral)]"
                           aria-required="true"
                           aria-invalid={!!errors.name}
                         />
@@ -273,9 +269,9 @@ const Yhteystiedot = (): React.ReactNode => {
                       </div>
                       <div>
                         <Label htmlFor="email">
-                          Sähköpostiosoite{' '}
+                          {t('form.email')}{' '}
                           <span className="text-destructive" aria-hidden="true">
-                            *
+                            {t('form.required')}
                           </span>
                         </Label>
                         <Input
@@ -284,28 +280,28 @@ const Yhteystiedot = (): React.ReactNode => {
                           type="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-2 focus:shadow-[var(--glow-orange)]"
+                          className="mt-2 focus:shadow-[var(--glow-coral)]"
                           aria-required="true"
                           aria-invalid={!!errors.email}
                         />
                         <FieldError error={errors.email} />
                       </div>
                       <div>
-                        <Label htmlFor="phone">Puhelin</Label>
+                        <Label htmlFor="phone">{t('form.phone')}</Label>
                         <Input
                           id="phone"
                           name="phone"
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-2 focus:shadow-[var(--glow-orange)]"
+                          className="mt-2 focus:shadow-[var(--glow-coral)]"
                         />
                       </div>
                       <div>
                         <Label htmlFor="organization">
-                          Organisaatio{' '}
+                          {t('form.organization')}{' '}
                           <span className="text-destructive" aria-hidden="true">
-                            *
+                            {t('form.required')}
                           </span>
                         </Label>
                         <Input
@@ -314,7 +310,7 @@ const Yhteystiedot = (): React.ReactNode => {
                           type="text"
                           value={formData.organization}
                           onChange={handleChange}
-                          className="mt-2 focus:shadow-[var(--glow-orange)]"
+                          className="mt-2 focus:shadow-[var(--glow-coral)]"
                           aria-required="true"
                           aria-invalid={!!errors.organization}
                         />
@@ -322,9 +318,9 @@ const Yhteystiedot = (): React.ReactNode => {
                       </div>
                       <div>
                         <Label htmlFor="message">
-                          Viesti{' '}
+                          {t('form.message')}{' '}
                           <span className="text-destructive" aria-hidden="true">
-                            *
+                            {t('form.required')}
                           </span>
                         </Label>
                         <Textarea
@@ -332,7 +328,7 @@ const Yhteystiedot = (): React.ReactNode => {
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
-                          className="mt-2 min-h-[120px] focus:shadow-[var(--glow-orange)]"
+                          className="mt-2 min-h-[120px] focus:shadow-[var(--glow-coral)]"
                           aria-required="true"
                           aria-invalid={!!errors.message}
                         />
@@ -356,11 +352,11 @@ const Yhteystiedot = (): React.ReactNode => {
                       )}
                       <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                         {isSubmitting ? (
-                          'Lähetetään...'
+                          t('form.submitting')
                         ) : (
                           <>
                             <Send className="mr-2 h-5 w-5" aria-hidden="true" />
-                            Lähetä viesti
+                            {t('form.submit')}
                           </>
                         )}
                       </Button>

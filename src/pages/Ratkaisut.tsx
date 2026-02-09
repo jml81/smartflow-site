@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
 import { SectionDivider } from '@/components/ui/section-divider';
+import { useLocalePath } from '@/hooks/use-locale-path';
+import { usePageMeta } from '@/hooks/use-page-meta';
 import { Building2, Landmark, HeartPulse, Factory, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface SolutionCardProps {
@@ -11,9 +14,18 @@ interface SolutionCardProps {
   title: string;
   description: string;
   benefits: string[];
+  ctaText: string;
+  ctaHref: string;
 }
 
-function SolutionCard({ icon, title, description, benefits }: SolutionCardProps): React.ReactNode {
+function SolutionCard({
+  icon,
+  title,
+  description,
+  benefits,
+  ctaText,
+  ctaHref,
+}: SolutionCardProps): React.ReactNode {
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl">
       {/* Left accent line that grows on hover */}
@@ -35,8 +47,8 @@ function SolutionCard({ icon, title, description, benefits }: SolutionCardProps)
       </div>
       <div className="border-t border-border bg-muted/30 px-6 py-4 md:px-8">
         <Button asChild variant="ghost" className="group/btn -ml-4 text-primary">
-          <Link to="/yhteystiedot">
-            Keskustellaan tarpeistanne
+          <Link to={ctaHref}>
+            {ctaText}
             <ArrowRight
               className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1"
               aria-hidden="true"
@@ -48,54 +60,34 @@ function SolutionCard({ icon, title, description, benefits }: SolutionCardProps)
   );
 }
 
+const solutionIcons = [
+  <Landmark className="h-7 w-7" aria-hidden="true" />,
+  <Building2 className="h-7 w-7" aria-hidden="true" />,
+  <HeartPulse className="h-7 w-7" aria-hidden="true" />,
+  <Factory className="h-7 w-7" aria-hidden="true" />,
+];
+
 const Ratkaisut = (): React.ReactNode => {
-  const solutions = [
-    {
-      icon: <Landmark className="h-7 w-7" aria-hidden="true" />,
-      title: 'Kunnat ja kaupungit',
-      description:
-        'Tarjoa kuntalaisille yhtenäinen digitaalinen asiointikokemus kaikissa kunnan palveluissa.',
-      benefits: [
-        'Yhtenäinen asiointialusta kaikille kunnan palveluille',
-        'Lupahakemusten ja ilmoitusten sähköinen käsittely',
-        'Asukkaiden tietojen hallinta ja päivitys',
-        'Maksujen vastaanotto suoraan alustalla',
-      ],
-    },
-    {
-      icon: <Building2 className="h-7 w-7" aria-hidden="true" />,
-      title: 'Virastot ja viranomaiset',
-      description: 'Digitalisoi viranomaispalvelut turvallisesti ja saavutettavasti.',
-      benefits: [
-        'Vahvan tunnistautumisen integraatiot',
-        'ISO27001-tason tietoturva',
-        'Täysi WCAG AA -saavutettavuus',
-        'Automaattiset työnkulut ja ilmoitukset',
-      ],
-    },
-    {
-      icon: <HeartPulse className="h-7 w-7" aria-hidden="true" />,
-      title: 'Hyvinvointialueet',
-      description: 'Rakenna sujuva digitaalinen asiointipolku sosiaali- ja terveyspalveluihin.',
-      benefits: [
-        'Ajanvaraus ja jonotusnumeroiden hallinta',
-        'Asiointihistorian seuranta',
-        'Turvallinen tiedonsiirto ja viestintä',
-        'Integraatiot potilastietojärjestelmiin',
-      ],
-    },
-    {
-      icon: <Factory className="h-7 w-7" aria-hidden="true" />,
-      title: 'Yritykset ja palveluorganisaatiot',
-      description: 'Paranna asiakaskokemusta ja tehosta digitaalista palvelua.',
-      benefits: [
-        'Asiakasportaali omien tietojen hallintaan',
-        'Tilausten ja laskujen seuranta',
-        'Tukipyyntöjen ja palautteiden käsittely',
-        'Integraatiot CRM- ja ERP-järjestelmiin',
-      ],
-    },
-  ];
+  const { t } = useTranslation('solutions');
+  const lp = useLocalePath();
+
+  usePageMeta({
+    title: t('meta.title'),
+    description: t('meta.description'),
+  });
+
+  const solutions = (
+    t('cards', { returnObjects: true }) as {
+      title: string;
+      description: string;
+      benefits: string[];
+    }[]
+  ).map((card, i) => ({
+    icon: solutionIcons[i],
+    ...card,
+    ctaText: t('cardCta'),
+    ctaHref: lp('contact'),
+  }));
 
   return (
     <Layout>
@@ -122,13 +114,8 @@ const Ratkaisut = (): React.ReactNode => {
         </svg>
         <div className="container relative">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-              Ratkaisut eri toimialoille
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-              SmartFlow sopii julkisille organisaatioille ja yrityksille, joilla on tiukat
-              vaatimukset tietoturvalle ja saavutettavuudelle.
-            </p>
+            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
+            <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
           </AnimatedSection>
         </div>
       </section>
@@ -150,15 +137,14 @@ const Ratkaisut = (): React.ReactNode => {
       <section className="bg-secondary py-16 md:py-24">
         <div className="container">
           <AnimatedSection className="mx-auto max-w-3xl text-center text-secondary-foreground">
-            <h2 className="text-2xl font-bold sm:text-3xl">Kenelle SmartFlow on tarkoitettu?</h2>
+            <h2 className="text-2xl font-bold sm:text-3xl">{t('bottomSection.title')}</h2>
             <p className="mt-6 text-lg text-secondary-foreground/80">
-              SmartFlow on suunniteltu organisaatioille, jotka haluavat tarjota asiakkailleen
-              yhdenmukaisen, helppokäyttöisen ja turvallisen digitaalisen asiointikokemuksen.
+              {t('bottomSection.description')}
             </p>
             <div className="mt-10">
               <Button asChild variant="hero" size="lg">
-                <Link to="/yhteystiedot">
-                  Ota yhteyttä
+                <Link to={lp('contact')}>
+                  {t('bottomSection.cta')}
                   <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                 </Link>
               </Button>

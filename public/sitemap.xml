@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://brightflow.antesto.fi/fi</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://brightflow.antesto.fi/en</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Features -->
+  <url>
+    <loc>https://brightflow.antesto.fi/fi/ominaisuudet</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/ominaisuudet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/features" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://brightflow.antesto.fi/en/features</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/ominaisuudet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/features" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Solutions -->
+  <url>
+    <loc>https://brightflow.antesto.fi/fi/ratkaisut</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/ratkaisut" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/solutions" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://brightflow.antesto.fi/en/solutions</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/ratkaisut" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/solutions" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Security & Accessibility -->
+  <url>
+    <loc>https://brightflow.antesto.fi/fi/turvallisuus-ja-saavutettavuus</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/turvallisuus-ja-saavutettavuus" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/security-and-accessibility" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://brightflow.antesto.fi/en/security-and-accessibility</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/turvallisuus-ja-saavutettavuus" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/security-and-accessibility" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Get Started -->
+  <url>
+    <loc>https://brightflow.antesto.fi/fi/aloita</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/aloita" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/get-started" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://brightflow.antesto.fi/en/get-started</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/aloita" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/get-started" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://brightflow.antesto.fi/fi/yhteystiedot</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/yhteystiedot" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://brightflow.antesto.fi/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://brightflow.antesto.fi/fi/yhteystiedot" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://brightflow.antesto.fi/en/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
