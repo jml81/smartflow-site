@@ -37,6 +37,11 @@
       }
     ]
   },
+  "cta": {
+    "title": "Haluatko nähdä kaikki ominaisuudet käytännössä?",
+    "description": "Varaa maksuton demo ja näe, miten BrightFlow tehostaa organisaatiosi digitaalista asiointia.",
+    "button": "Varaa demo"
+  },
   "technical": {
     "title": "Tekniset vahvuudet",
     "subtitle": "Moderni teknologia ja laaja integroitavuus helpottavat k\u00e4ytt\u00f6\u00f6nottoa.",
