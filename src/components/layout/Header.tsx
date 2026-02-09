@@ -59,17 +59,10 @@ export function Header(): ReactNode {
       <div className="container flex h-16 items-center justify-between md:h-18">
         <Link
           to={lp('home')}
-          className="flex items-center gap-2 text-xl font-bold text-foreground transition-opacity hover:opacity-80"
+          className="flex items-center transition-opacity hover:opacity-80"
           aria-label={t('header.brandAriaLabel')}
         >
-          <img
-            src="/logo-icon.png"
-            alt=""
-            width={36}
-            height={36}
-            className="h-9 w-9 mix-blend-multiply"
-          />
-          <span className="hidden sm:inline">{t('header.brandName')}</span>
+          <img src="/logo-full.png" alt={t('header.brandName')} className="h-8 w-auto sm:h-10" />
         </Link>
 
         <nav className="hidden lg:flex lg:items-center lg:gap-1" aria-label={t('header.mainNav')}>
