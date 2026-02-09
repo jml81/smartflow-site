@@ -62,7 +62,13 @@ export function Header(): ReactNode {
           className="flex items-center gap-2 text-xl font-bold text-foreground transition-opacity hover:opacity-80"
           aria-label={t('header.brandAriaLabel')}
         >
-          <img src="/logo-icon.png" alt="" width={36} height={36} className="h-9 w-9" />
+          <img
+            src="/logo-icon.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 mix-blend-multiply"
+          />
           <span className="hidden sm:inline">{t('header.brandName')}</span>
         </Link>
 
