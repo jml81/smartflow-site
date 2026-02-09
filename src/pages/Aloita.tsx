@@ -118,8 +118,17 @@ const Aloita = (): React.ReactNode => {
 
   return (
     <Layout>
-      <section className="bg-muted/50 py-12 md:py-16">
-        <div className="container">
+      <section className="relative bg-muted/50 py-12 md:py-16 overflow-hidden">
+        {/* Coral-to-transparent radial gradient — action/energy theme */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 0%, hsl(349 75% 63% / 0.08), transparent 60%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
@@ -127,8 +136,16 @@ const Aloita = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
+      <section className="relative section-padding overflow-hidden">
+        {/* Subtle radial glow centered behind steps grid */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[700px]"
+          style={{
+            background: 'radial-gradient(ellipse, hsl(349 75% 63% / 0.04), transparent 70%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <AnimatedSection>
             <h2 className="text-center text-2xl font-bold sm:text-3xl">{t('processTitle')}</h2>
           </AnimatedSection>
@@ -176,8 +193,16 @@ const Aloita = (): React.ReactNode => {
 
       <SectionDivider variant="wave" fill="hsl(var(--background))" flip />
 
-      <section className="section-padding">
-        <div className="container">
+      <section className="relative section-padding overflow-hidden">
+        {/* Subtle coral radial glow behind pricing card */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[500px]"
+          style={{
+            background: 'radial-gradient(ellipse, hsl(349 75% 63% / 0.05), transparent 70%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <AnimatedSection>
             <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 text-center md:p-12">
               <h2 className="text-2xl font-bold">{t('pricing.title')}</h2>
@@ -198,7 +223,7 @@ const Aloita = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="bg-muted/30 py-16 md:py-24">
+      <section className="py-16 md:py-24" style={{ backgroundColor: 'hsl(242 40% 97%)' }}>
         <div className="container">
           <StaggeredChildren className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" stagger={0.1}>
             <StaggeredItem>

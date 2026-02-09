@@ -170,8 +170,17 @@ const Yhteystiedot = (): React.ReactNode => {
 
   return (
     <Layout>
-      <section className="bg-muted/50 py-12 md:py-16">
-        <div className="container">
+      <section className="relative bg-muted/50 py-12 md:py-16 overflow-hidden">
+        {/* Warm coral-to-sky gradient overlay — welcoming feel */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 30% 0%, hsl(349 75% 63% / 0.07), transparent 50%), radial-gradient(ellipse at 70% 0%, hsl(195 85% 62% / 0.05), transparent 50%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
@@ -179,7 +188,7 @@ const Yhteystiedot = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: 'hsl(242 40% 25% / 0.02)' }}>
         <div className="container">
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -210,7 +219,7 @@ const Yhteystiedot = (): React.ReactNode => {
                     />
                   </StaggeredItem>
                 </StaggeredChildren>
-                <div className="mt-10 rounded-xl border border-border bg-muted/50 p-6">
+                <div className="mt-10 rounded-xl border border-primary/10 bg-primary/[0.03] p-6">
                   <h3 className="font-semibold">{t('privacy.title')}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{t('privacy.description')}</p>
                 </div>

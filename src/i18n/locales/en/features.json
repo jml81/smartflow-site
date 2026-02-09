@@ -37,6 +37,11 @@
       }
     ]
   },
+  "cta": {
+    "title": "Want to see all features in action?",
+    "description": "Book a free demo and discover how BrightFlow can transform your organization's digital services.",
+    "button": "Book a demo"
+  },
   "technical": {
     "title": "Technical Strengths",
     "subtitle": "Modern technology and extensive integrations simplify deployment.",

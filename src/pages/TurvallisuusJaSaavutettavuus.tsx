@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Layout } from '@/components/layout/Layout';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
+import { SectionDivider } from '@/components/ui/section-divider';
 import { usePageMeta } from '@/hooks/use-page-meta';
 import {
   ShieldCheck,
@@ -70,8 +71,17 @@ const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
 
   return (
     <Layout>
-      <section className="bg-muted/50 py-12 md:py-16">
-        <div className="container">
+      <section className="relative bg-muted/50 py-12 md:py-16 overflow-hidden">
+        {/* Subtle indigo gradient overlay — trust/security theme */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 0%, hsl(242 40% 25% / 0.06), transparent 60%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
@@ -79,8 +89,16 @@ const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
+      <section className="relative section-padding overflow-hidden">
+        {/* Faint sky-blue radial wash behind section */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[700px]"
+          style={{
+            background: 'radial-gradient(ellipse, hsl(195 85% 62% / 0.05), transparent 70%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <div className="mx-auto max-w-4xl">
             <AnimatedSection className="mb-12 text-center">
               <div className="relative mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-accent">
@@ -105,8 +123,16 @@ const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="bg-muted/30 py-16 md:py-24">
-        <div className="container">
+      <section className="relative bg-muted/30 py-16 md:py-24 overflow-hidden">
+        {/* Faint coral radial glow behind accessibility section */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px]"
+          style={{
+            background: 'radial-gradient(ellipse, hsl(349 75% 63% / 0.04), transparent 70%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <div className="mx-auto max-w-4xl">
             <AnimatedSection className="mb-12 text-center">
               <div className="relative mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
@@ -131,14 +157,14 @@ const TurvallisuusJaSaavutettavuus = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="section-padding">
+      <SectionDivider variant="curve" fill="hsl(var(--secondary))" />
+
+      <section className="bg-secondary py-16 md:py-24">
         <div className="container">
-          <AnimatedSection>
-            <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 text-center md:p-12">
-              <Lock className="mx-auto h-12 w-12 text-accent" aria-hidden="true" />
-              <h2 className="mt-6 text-2xl font-bold">{t('privacyPromise.title')}</h2>
-              <p className="mt-4 text-muted-foreground">{t('privacyPromise.description')}</p>
-            </div>
+          <AnimatedSection className="mx-auto max-w-3xl text-center text-secondary-foreground">
+            <Lock className="mx-auto h-12 w-12 text-primary" aria-hidden="true" />
+            <h2 className="mt-6 text-2xl font-bold">{t('privacyPromise.title')}</h2>
+            <p className="mt-4 text-secondary-foreground/80">{t('privacyPromise.description')}</p>
           </AnimatedSection>
         </div>
       </section>

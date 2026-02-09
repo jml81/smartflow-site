@@ -92,6 +92,15 @@ const Ratkaisut = (): React.ReactNode => {
   return (
     <Layout>
       <section className="relative bg-muted/50 py-12 md:py-16 overflow-hidden">
+        {/* Sky-blue gradient tint overlay */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 0%, hsl(195 85% 62% / 0.07), transparent 60%)',
+          }}
+          aria-hidden="true"
+        />
         {/* SVG dot grid pattern */}
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.03]"
@@ -120,8 +129,16 @@ const Ratkaisut = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
+      <section className="relative section-padding overflow-hidden">
+        {/* Subtle coral radial glow behind grid */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px]"
+          style={{
+            background: 'radial-gradient(ellipse, hsl(349 75% 63% / 0.04), transparent 70%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <StaggeredChildren className="grid gap-8 lg:grid-cols-2" stagger={0.12}>
             {solutions.map((solution, index) => (
               <StaggeredItem key={index}>

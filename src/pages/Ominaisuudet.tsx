@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Layout } from '@/components/layout/Layout';
+import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-children';
+import { SectionDivider } from '@/components/ui/section-divider';
+import { useLocalePath } from '@/hooks/use-locale-path';
 import { usePageMeta } from '@/hooks/use-page-meta';
 import {
   Palette,
@@ -14,6 +18,7 @@ import {
   Blocks,
   Layers,
   Globe,
+  ArrowRight,
 } from 'lucide-react';
 
 interface FeatureDetailProps {
@@ -54,6 +59,7 @@ const techIcons = [
 
 const Ominaisuudet = (): React.ReactNode => {
   const { t } = useTranslation('features');
+  const lp = useLocalePath();
 
   usePageMeta({
     title: t('meta.title'),
@@ -71,12 +77,12 @@ const Ominaisuudet = (): React.ReactNode => {
   return (
     <Layout>
       <section className="relative bg-muted/50 py-12 md:py-16 overflow-hidden">
-        {/* Soft radial gradient background */}
+        {/* Strengthened coral radial gradient with indigo base tint */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse at 50% 0%, hsl(349 75% 63% / 0.06), transparent 60%)',
+              'radial-gradient(ellipse at 50% 0%, hsl(349 75% 63% / 0.10), transparent 60%), linear-gradient(to bottom, hsl(242 40% 25% / 0.03), transparent)',
           }}
           aria-hidden="true"
         />
@@ -88,8 +94,16 @@ const Ominaisuudet = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
+      <section className="relative section-padding overflow-hidden">
+        {/* Subtle coral radial glow behind section heading */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[400px] w-[600px]"
+          style={{
+            background: 'radial-gradient(ellipse, hsl(349 75% 63% / 0.05), transparent 70%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <AnimatedSection>
             <h2 className="text-center text-2xl font-bold sm:text-3xl">{t('core.title')}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
@@ -109,7 +123,7 @@ const Ominaisuudet = (): React.ReactNode => {
         </div>
       </section>
 
-      <section className="bg-muted/30 py-16 md:py-24">
+      <section className="py-16 md:py-24" style={{ backgroundColor: 'hsl(242 40% 97%)' }}>
         <div className="container">
           <AnimatedSection>
             <h2 className="text-center text-2xl font-bold sm:text-3xl">{t('technical.title')}</h2>
@@ -127,6 +141,25 @@ const Ominaisuudet = (): React.ReactNode => {
               </StaggeredItem>
             ))}
           </StaggeredChildren>
+        </div>
+      </section>
+
+      <SectionDivider variant="curve" fill="hsl(var(--secondary))" />
+
+      <section className="bg-secondary py-16 md:py-24">
+        <div className="container">
+          <AnimatedSection className="mx-auto max-w-3xl text-center text-secondary-foreground">
+            <h2 className="text-2xl font-bold sm:text-3xl">{t('cta.title')}</h2>
+            <p className="mt-6 text-lg text-secondary-foreground/80">{t('cta.description')}</p>
+            <div className="mt-10">
+              <Button asChild variant="hero" size="lg">
+                <Link to={lp('contact')}>
+                  {t('cta.button')}
+                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                </Link>
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>
