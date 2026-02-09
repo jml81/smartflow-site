@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Outlet, Navigate, useParams, useLocation } from 'react-router-dom';
+import { Outlet, Navigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   isLocale,
@@ -9,13 +9,13 @@ import {
   slugToRouteKey,
 } from '@/i18n/routes';
 
-/** Validates the locale param, syncs i18n, sets html lang and injects hreflang links. */
+/** Validates the locale from the URL path, syncs i18n, sets html lang and injects hreflang links. */
 export function LocaleLayout(): React.ReactNode {
-  const { locale } = useParams<{ locale: string }>();
   const { i18n } = useTranslation();
   const location = useLocation();
 
-  const validLocale = locale && isLocale(locale) ? locale : null;
+  const segment = location.pathname.split('/')[1];
+  const validLocale = segment && isLocale(segment) ? segment : null;
 
   // Sync i18n language when locale changes
   useEffect(() => {

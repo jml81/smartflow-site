@@ -1,11 +1,12 @@
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { isLocale, defaultLocale, type Locale } from '@/i18n/routes';
 
-/** Returns the current locale from URL params, falling back to defaultLocale. */
+/** Returns the current locale from the URL path, falling back to defaultLocale. */
 export function useLocale(): Locale {
-  const { locale } = useParams<{ locale: string }>();
-  return locale && isLocale(locale) ? locale : defaultLocale;
+  const { pathname } = useLocation();
+  const segment = pathname.split('/')[1];
+  return segment && isLocale(segment) ? segment : defaultLocale;
 }
 
 /** Returns the t function scoped to a namespace, plus the current locale. */

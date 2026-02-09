@@ -52,6 +52,10 @@ void i18n
     interpolation: {
       escapeValue: false, // React already escapes
     },
+    initImmediate: false, // Synchronous init — resources are static, no async loading needed
+    react: {
+      useSuspense: false,
+    },
     detection: {
       // URL path is primary — /fi/ or /en/
       order: ['path', 'localStorage', 'navigator'],
