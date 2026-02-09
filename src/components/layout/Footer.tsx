@@ -28,12 +28,11 @@ export function Footer(): React.ReactNode {
       <div className="container py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link to={lp('home')} className="inline-flex items-center">
-              <img
-                src="/logo-full.png"
-                alt={t('header.brandName')}
-                className="h-8 w-auto brightness-0 invert"
-              />
+            <Link to={lp('home')} className="inline-flex items-center gap-2">
+              <img src="/logo-icon.png" alt="" className="h-9 w-auto" />
+              <span className="text-xl font-bold text-secondary-foreground">
+                {t('header.brandName')}
+              </span>
             </Link>
             <p className="mt-4 max-w-md text-sm text-secondary-foreground/80">
               {t('footer.description')}
