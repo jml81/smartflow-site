@@ -27,10 +27,10 @@ function SolutionCard({
   ctaHref,
 }: SolutionCardProps): React.ReactNode {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl">
       {/* Left accent line that grows on hover */}
       <div className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-accent transition-transform duration-300 group-hover:scale-y-100" />
-      <div className="p-6 md:p-8">
+      <div className="flex-1 p-6 md:p-8">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent">
           {icon}
         </div>

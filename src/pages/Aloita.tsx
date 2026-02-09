@@ -27,7 +27,7 @@ interface StepCardProps {
 
 function StepCard({ number, icon, title, description }: StepCardProps): React.ReactNode {
   return (
-    <div className="relative flex flex-col items-center text-center">
+    <div className="relative flex h-full flex-col items-center text-center">
       <div className="relative">
         <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
           {icon}
@@ -202,14 +202,14 @@ const Aloita = (): React.ReactNode => {
         <div className="container">
           <StaggeredChildren className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" stagger={0.1}>
             <StaggeredItem>
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="h-full rounded-xl border border-border bg-card p-6">
                 <Users className="h-10 w-10 text-primary animate-float-slow" aria-hidden="true" />
                 <h3 className="mt-4 text-lg font-semibold">{t('support.training.title')}</h3>
                 <p className="mt-2 text-muted-foreground">{t('support.training.description')}</p>
               </div>
             </StaggeredItem>
             <StaggeredItem>
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="h-full rounded-xl border border-border bg-card p-6">
                 <Cog
                   className="h-10 w-10 text-primary animate-float-slow-reverse"
                   aria-hidden="true"
@@ -219,7 +219,7 @@ const Aloita = (): React.ReactNode => {
               </div>
             </StaggeredItem>
             <StaggeredItem>
-              <div className="rounded-xl border border-border bg-card p-6 md:col-span-2 lg:col-span-1">
+              <div className="h-full rounded-xl border border-border bg-card p-6 md:col-span-2 lg:col-span-1">
                 <Sparkles
                   className="h-10 w-10 text-primary animate-float-slow-alt"
                   aria-hidden="true"

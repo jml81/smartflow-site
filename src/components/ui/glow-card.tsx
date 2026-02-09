@@ -11,7 +11,7 @@ export function GlowCard({ children, className, glowColor = 'orange' }: GlowCard
   return (
     <div
       className={cn(
-        'group relative rounded-xl border border-border bg-card p-6 transition-all duration-300 md:p-8',
+        'group relative h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 md:p-8',
         'hover:border-transparent hover:shadow-xl',
         className,
       )}

@@ -24,7 +24,7 @@ interface InfoCardProps {
 
 function InfoCard({ icon, title, description }: InfoCardProps): React.ReactNode {
   return (
-    <div className="flex gap-4">
+    <div className="flex h-full gap-4">
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
         {icon}
       </div>

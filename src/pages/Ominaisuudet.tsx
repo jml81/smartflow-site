@@ -24,7 +24,7 @@ interface FeatureDetailProps {
 
 function FeatureDetail({ icon, title, description }: FeatureDetailProps): React.ReactNode {
   return (
-    <div className="group relative rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg overflow-hidden">
+    <div className="group relative h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg overflow-hidden">
       {/* Top accent line that scales on hover */}
       <div className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:rounded-lg group-hover:bg-primary group-hover:text-primary-foreground">
