@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Accessibility Statement – BrightFlow",
+    "description": "BrightFlow website accessibility statement. Information about WCAG 2.1 compliance and the current state of accessibility."
+  },
+  "title": "Accessibility Statement",
+  "intro": "This accessibility statement applies to the Antesto Oy BrightFlow website (brightflow.fi). We strive to ensure our website is accessible to all users regardless of their abilities or assistive technologies.",
+  "sections": {
+    "status": {
+      "title": "1. Accessibility Status",
+      "content": "This website largely meets the WCAG 2.1 Level AA requirements. We are committed to continuously improving the accessibility of our site and addressing any issues."
+    },
+    "features": {
+      "title": "2. Accessibility Features",
+      "description": "We have implemented the following accessibility features:",
+      "items": [
+        "The site is fully navigable by keyboard",
+        "Images have descriptive alt text for screen readers",
+        "Colour contrast levels meet AA requirements",
+        "Text can be resized without loss of functionality",
+        "Form fields have clear labels and helper text",
+        "The site structure is semantically correct (heading levels, landmarks)",
+        "Links and buttons are clearly distinguishable",
+        "Animations respect user motion preferences"
+      ]
+    },
+    "knownIssues": {
+      "title": "3. Known Issues",
+      "content": "We are not currently aware of any significant accessibility issues. If you encounter any problems, please contact us."
+    },
+    "feedback": {
+      "title": "4. Feedback & Contact",
+      "description": "We welcome feedback on our site's accessibility. If you encounter any issues or have suggestions for improvement, please contact us:",
+      "emailLabel": "Email",
+      "email": "viestinta@antesto.fi",
+      "companyLabel": "Company",
+      "company": "Antesto Oy",
+      "addressLabel": "Address",
+      "address": "PO Box 13, 00561 Helsinki, Finland",
+      "responseTime": "We aim to respond to accessibility-related enquiries within 14 days."
+    },
+    "authority": {
+      "title": "5. Supervisory Authority",
+      "description": "If you notice accessibility issues on the site and are not satisfied with the response you receive, you can file a report with the Regional State Administrative Agency for Southern Finland:",
+      "agencyLabel": "Agency",
+      "agencyName": "Regional State Administrative Agency for Southern Finland, Accessibility Supervision Unit",
+      "websiteLabel": "Website",
+      "websiteUrl": "https://www.saavutettavuusvaatimukset.fi",
+      "emailLabel": "Email",
+      "email": "saavutettavuus@avi.fi"
+    },
+    "update": {
+      "title": "6. Statement Update",
+      "content": "This accessibility statement was prepared on {{date}}. The statement is updated as needed, at the latest when significant changes are made to the site."
+    }
+  }
+}

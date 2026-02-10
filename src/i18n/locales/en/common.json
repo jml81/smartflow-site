@@ -5,7 +5,9 @@
     "solutions": "Solutions",
     "security": "Security",
     "start": "Service",
-    "contact": "Contact"
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "accessibility": "Accessibility"
   },
   "header": {
     "brandName": "BrightFlow",

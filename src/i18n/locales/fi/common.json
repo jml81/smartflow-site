@@ -5,7 +5,9 @@
     "solutions": "Ratkaisut",
     "security": "Turvallisuus",
     "start": "Palvelu",
-    "contact": "Yhteystiedot"
+    "contact": "Yhteystiedot",
+    "privacy": "Tietosuoja",
+    "accessibility": "Saavutettavuus"
   },
   "header": {
     "brandName": "BrightFlow",

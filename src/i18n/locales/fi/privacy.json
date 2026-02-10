@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "Tietosuojaseloste – BrightFlow",
+    "description": "Antesto Oy:n tietosuojaseloste. Tietoa henkilötietojen käsittelystä, rekisterinpitäjästä ja rekisteröidyn oikeuksista."
+  },
+  "title": "Tietosuojaseloste",
+  "updated": "Päivitetty: 10. helmikuuta 2026",
+  "sections": {
+    "controller": {
+      "title": "1. Rekisterinpitäjä",
+      "content": "<strong>Antesto Oy</strong><br />Y-tunnus: 3437354-2<br />PL 13, 00561 Helsinki<br />Sähköposti: viestinta@antesto.fi"
+    },
+    "purpose": {
+      "title": "2. Henkilötietojen käsittelyn tarkoitus",
+      "description": "Käsittelemme henkilötietoja seuraaviin tarkoituksiin:",
+      "items": [
+        "Asiakassuhteiden hoitaminen ja ylläpito",
+        "Palveluiden tuottaminen ja kehittäminen",
+        "Yhteydenottoihin vastaaminen",
+        "Lakisääteisten velvoitteiden täyttäminen"
+      ]
+    },
+    "data": {
+      "title": "3. Käsiteltävät henkilötiedot",
+      "description": "Keräämme ja käsittelemme seuraavia henkilötietoja:",
+      "items": [
+        "Nimi ja yhteystiedot (sähköposti, puhelin)",
+        "Yritys ja asema",
+        "Yhteydenottolomakkeen kautta lähetetyt viestit",
+        "Verkkosivuston käyttöön liittyvät tekniset tiedot (evästeet)"
+      ]
+    },
+    "sources": {
+      "title": "4. Henkilötietojen lähteet",
+      "content": "Henkilötiedot kerätään pääasiassa suoraan rekisteröidyltä itseltään, esimerkiksi yhteydenottolomakkeen tai sähköpostin kautta. Tietoja voidaan kerätä myös julkisista lähteistä liiketoiminnan yhteydessä."
+    },
+    "disclosure": {
+      "title": "5. Tietojen luovutus ja siirto",
+      "content": "Emme luovuta henkilötietoja kolmansille osapuolille markkinointitarkoituksiin. Tietoja voidaan luovuttaa viranomaisille lakisääteisten velvoitteiden täyttämiseksi. Käytämme palveluntarjoajia (esim. pilvipalvelut), joiden kanssa olemme tehneet asianmukaiset tietojenkäsittelysopimukset."
+    },
+    "retention": {
+      "title": "6. Tietojen säilytysaika",
+      "content": "Säilytämme henkilötietoja vain niin kauan kuin on tarpeen tässä selosteessa kuvattujen tarkoitusten toteuttamiseksi tai lakisääteisten velvoitteiden täyttämiseksi."
+    },
+    "rights": {
+      "title": "7. Rekisteröidyn oikeudet",
+      "description": "Rekisteröidyllä on seuraavat oikeudet:",
+      "items": [
+        "Oikeus saada pääsy omiin tietoihinsa",
+        "Oikeus tietojen oikaisemiseen",
+        "Oikeus tietojen poistamiseen",
+        "Oikeus käsittelyn rajoittamiseen",
+        "Oikeus vastustaa käsittelyä",
+        "Oikeus siirtää tiedot järjestelmästä toiseen"
+      ],
+      "footer": "Voit käyttää oikeuksiasi ottamalla yhteyttä osoitteeseen viestinta@antesto.fi."
+    },
+    "security": {
+      "title": "8. Tietoturva",
+      "content": "Suojaamme henkilötietoja asianmukaisin teknisin ja organisatorisin toimenpitein. Pääsy tietoihin on rajoitettu vain niille henkilöille, jotka tarvitsevat niitä työtehtäviensä hoitamiseen."
+    }
+  }
+}

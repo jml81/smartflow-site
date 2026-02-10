@@ -61,9 +61,10 @@ const Ominaisuudet = (): React.ReactNode => {
   const { t } = useTranslation('features');
   const lp = useLocalePath();
 
+  const metaDescription = t('meta.description');
   usePageMeta({
     title: t('meta.title'),
-    description: t('meta.description'),
+    description: metaDescription || t('meta.title'),
   });
 
   const coreFeatures = (
@@ -89,7 +90,9 @@ const Ominaisuudet = (): React.ReactNode => {
         <div className="container relative">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">{t('hero.title')}</h1>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
+            {t('hero.subtitle') && (
+              <p className="mt-4 text-lg text-muted-foreground md:text-xl">{t('hero.subtitle')}</p>
+            )}
           </AnimatedSection>
         </div>
       </section>

@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Saavutettavuusseloste – BrightFlow",
+    "description": "BrightFlow-sivuston saavutettavuusseloste. Tietoa WCAG 2.1 -vaatimustenmukaisuudesta ja saavutettavuuden tilasta."
+  },
+  "title": "Saavutettavuusseloste",
+  "intro": "Tämä saavutettavuusseloste koskee Antesto Oy:n BrightFlow-sivustoa (brightflow.fi). Pyrimme varmistamaan, että verkkosivustomme on saavutettava kaikille käyttäjille riippumatta heidän kyvyistään tai käyttämistään apuvälineistä.",
+  "sections": {
+    "status": {
+      "title": "1. Saavutettavuuden tila",
+      "content": "Tämä verkkosivusto täyttää WCAG 2.1 -ohjeistuksen AA-tason vaatimukset pääosin. Olemme sitoutuneet jatkuvasti parantamaan sivuston saavutettavuutta ja korjaamaan mahdolliset puutteet."
+    },
+    "features": {
+      "title": "2. Saavutettavuusominaisuudet",
+      "description": "Olemme toteuttaneet seuraavat saavutettavuusominaisuudet:",
+      "items": [
+        "Sivusto on navigoitavissa näppäimistöllä",
+        "Kuvilla on kuvaavat alt-tekstit ruudunlukuohjelmia varten",
+        "Sivuston värikontrastitasot täyttävät AA-tason vaatimukset",
+        "Tekstikoko on skaalattavissa ilman toiminnallisuuden menettämistä",
+        "Lomakkeiden kentillä on selkeät tunnisteet ja ohjetekstit",
+        "Sivuston rakenne on semanttisesti oikea (otsikkotasot, maamerkit)",
+        "Linkit ja painikkeet ovat selkeästi erotettavissa",
+        "Animaatiot kunnioittavat käyttäjän liikeasetuksia"
+      ]
+    },
+    "knownIssues": {
+      "title": "3. Tunnetut puutteet",
+      "content": "Tällä hetkellä meillä ei ole tiedossa merkittäviä saavutettavuuspuutteita. Mikäli havaitset sivustolla saavutettavuusongelmia, otathan meihin yhteyttä."
+    },
+    "feedback": {
+      "title": "4. Palaute ja yhteystiedot",
+      "description": "Otamme mielellämme vastaan palautetta sivuston saavutettavuudesta. Jos kohtaat saavutettavuusongelmia tai sinulla on parannusehdotuksia, ota meihin yhteyttä:",
+      "emailLabel": "Sähköposti",
+      "email": "viestinta@antesto.fi",
+      "companyLabel": "Yritys",
+      "company": "Antesto Oy",
+      "addressLabel": "Osoite",
+      "address": "PL 13, 00561 Helsinki",
+      "responseTime": "Pyrimme vastaamaan saavutettavuutta koskeviin yhteydenottoihin 14 päivän kuluessa."
+    },
+    "authority": {
+      "title": "5. Valvontaviranomainen",
+      "description": "Jos huomaat sivustolla saavutettavuusongelmia ja olet tyytymätön saamaasi vastaukseen, voit tehdä ilmoituksen Etelä-Suomen aluehallintovirastoon:",
+      "agencyLabel": "Virasto",
+      "agencyName": "Etelä-Suomen aluehallintovirasto, Saavutettavuuden valvontayksikkö",
+      "websiteLabel": "Verkkosivu",
+      "websiteUrl": "https://www.saavutettavuusvaatimukset.fi",
+      "emailLabel": "Sähköposti",
+      "email": "saavutettavuus@avi.fi"
+    },
+    "update": {
+      "title": "6. Selosteen päivitys",
+      "content": "Tämä saavutettavuusseloste on laadittu {{date}}. Seloste päivitetään tarvittaessa, viimeistään kun sivustoon tehdään merkittäviä muutoksia."
+    }
+  }
+}

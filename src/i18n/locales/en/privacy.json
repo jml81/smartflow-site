@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "Privacy Policy – BrightFlow",
+    "description": "Antesto Oy's privacy policy. Information about the processing of personal data, the data controller, and data subject rights."
+  },
+  "title": "Privacy Policy",
+  "updated": "Last updated: 10 February 2026",
+  "sections": {
+    "controller": {
+      "title": "1. Data Controller",
+      "content": "<strong>Antesto Oy</strong><br />Business ID: 3437354-2<br />PO Box 13, 00561 Helsinki, Finland<br />Email: viestinta@antesto.fi"
+    },
+    "purpose": {
+      "title": "2. Purpose of Processing Personal Data",
+      "description": "We process personal data for the following purposes:",
+      "items": [
+        "Managing and maintaining customer relationships",
+        "Providing and developing our services",
+        "Responding to enquiries",
+        "Fulfilling statutory obligations"
+      ]
+    },
+    "data": {
+      "title": "3. Personal Data Processed",
+      "description": "We collect and process the following personal data:",
+      "items": [
+        "Name and contact details (email, phone)",
+        "Company and position",
+        "Messages submitted via the contact form",
+        "Technical data related to website usage (cookies)"
+      ]
+    },
+    "sources": {
+      "title": "4. Sources of Personal Data",
+      "content": "Personal data is primarily collected directly from the data subject, for example through the contact form or email. Data may also be collected from public sources in the course of business."
+    },
+    "disclosure": {
+      "title": "5. Data Disclosure and Transfer",
+      "content": "We do not disclose personal data to third parties for marketing purposes. Data may be disclosed to authorities to fulfil statutory obligations. We use service providers (e.g. cloud services) with whom we have entered into appropriate data processing agreements."
+    },
+    "retention": {
+      "title": "6. Data Retention Period",
+      "content": "We retain personal data only as long as necessary to fulfil the purposes described in this policy or to comply with statutory obligations."
+    },
+    "rights": {
+      "title": "7. Data Subject Rights",
+      "description": "Data subjects have the following rights:",
+      "items": [
+        "Right of access to their data",
+        "Right to rectification",
+        "Right to erasure",
+        "Right to restriction of processing",
+        "Right to object to processing",
+        "Right to data portability"
+      ],
+      "footer": "You can exercise your rights by contacting us at viestinta@antesto.fi."
+    },
+    "security": {
+      "title": "8. Data Security",
+      "content": "We protect personal data with appropriate technical and organisational measures. Access to data is restricted to those who need it for their job duties."
+    }
+  }
+}

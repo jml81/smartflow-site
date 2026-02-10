@@ -65,13 +65,13 @@ export function Footer(): React.ReactNode {
           </p>
           <div className="flex gap-6">
             <Link
-              to={lp('security')}
+              to={lp('privacy')}
               className="inline-block py-2 text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
             >
               {t('footer.privacy')}
             </Link>
             <Link
-              to={lp('security')}
+              to={lp('accessibility')}
               className="inline-block py-2 text-sm text-secondary-foreground/60 transition-colors hover:text-primary"
             >
               {t('footer.accessibility')}

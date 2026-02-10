@@ -9,6 +9,8 @@ import Ratkaisut from './pages/Ratkaisut';
 import TurvallisuusJaSaavutettavuus from './pages/TurvallisuusJaSaavutettavuus';
 import Aloita from './pages/Aloita';
 import Yhteystiedot from './pages/Yhteystiedot';
+import Tietosuoja from './pages/Tietosuoja';
+import Saavutettavuusseloste from './pages/Saavutettavuusseloste';
 import NotFound from './pages/NotFound';
 
 function ScrollToTop(): null {
@@ -36,6 +38,8 @@ const App = (): React.ReactNode => (
         <Route path="turvallisuus-ja-saavutettavuus" element={<TurvallisuusJaSaavutettavuus />} />
         <Route path="palvelu" element={<Aloita />} />
         <Route path="yhteystiedot" element={<Yhteystiedot />} />
+        <Route path="tietosuoja" element={<Tietosuoja />} />
+        <Route path="saavutettavuusseloste" element={<Saavutettavuusseloste />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 
@@ -47,6 +51,8 @@ const App = (): React.ReactNode => (
         <Route path="security-and-accessibility" element={<TurvallisuusJaSaavutettavuus />} />
         <Route path="service" element={<Aloita />} />
         <Route path="contact" element={<Yhteystiedot />} />
+        <Route path="privacy" element={<Tietosuoja />} />
+        <Route path="accessibility-statement" element={<Saavutettavuusseloste />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 

@@ -15,6 +15,8 @@ const routeSlugs = {
     security: 'turvallisuus-ja-saavutettavuus',
     start: 'palvelu',
     contact: 'yhteystiedot',
+    privacy: 'tietosuoja',
+    accessibility: 'saavutettavuusseloste',
   },
   en: {
     home: '',
@@ -23,6 +25,8 @@ const routeSlugs = {
     security: 'security-and-accessibility',
     start: 'service',
     contact: 'contact',
+    privacy: 'privacy',
+    accessibility: 'accessibility-statement',
   },
 } as const;
 
@@ -55,8 +59,11 @@ export function switchLocalePath(
   return localePath(targetLocale, routeKey);
 }
 
+/** Route keys that appear in the main navigation (excludes legal pages) */
+type NavRouteKey = Exclude<RouteKey, 'privacy' | 'accessibility'>;
+
 /** Navigation items for a given locale */
-export function getNavItems(locale: Locale): { label: string; href: string; key: RouteKey }[] {
+export function getNavItems(locale: Locale): { label: string; href: string; key: NavRouteKey }[] {
   return [
     { label: '', href: localePath(locale, 'home'), key: 'home' },
     { label: '', href: localePath(locale, 'features'), key: 'features' },
