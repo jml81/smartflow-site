@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "BrightFlow \u2013 Markkinoiden paras s\u00e4hk\u00f6isen asioinnin alusta",
-    "description": "Tarjoa asiakkaillesi sujuvia, saavutettavia ja turvallisia digitaalisia palveluja yhdenmukaisella k\u00e4ytt\u00e4j\u00e4kokemuksella."
+    "title": "BrightFlow – Markkinoiden paras sähköisen asioinnin alusta",
+    "description": "Tarjoa asiakkaillesi sujuvia, saavutettavia ja turvallisia digitaalisia palveluja yhdenmukaisella käyttäjäkokemuksella."
   },
   "hero": {
-    "title": "BrightFlow \u2013 markkinoiden paras",
-    "titleHighlight": "s\u00e4hk\u00f6isen asioinnin",
+    "title": "BrightFlow – markkinoiden paras",
+    "titleHighlight": "sähköisen asioinnin",
     "titleEnd": "alusta",
-    "subtitle": "Tarjoa asiakkaillesi sujuvia, saavutettavia ja turvallisia digitaalisia palveluja yhdenmukaisella k\u00e4ytt\u00e4j\u00e4kokemuksella.",
+    "subtitle": "Tarjoa asiakkaillesi sujuvia, saavutettavia ja turvallisia digitaalisia palveluja yhdenmukaisella käyttäjäkokemuksella.",
     "ctaDemo": "Varaa demo",
-    "ctaFeatures": "Lue lis\u00e4\u00e4 ominaisuuksista"
+    "ctaFeatures": "Lue lisää ominaisuuksista"
   },
   "integration": {
-    "title": "Saumaton integraatio nykyisiin j\u00e4rjestelmiin",
-    "description": "BrightFlow integroituu saumattomasti olemassa oleviin verkkosivuihin ja taustaj\u00e4rjestelmiin. Tarjoa yhdenmukainen asiointikokemuksen palvelusta riippumatta ja tue yhten\u00e4ist\u00e4 br\u00e4ndi-ilmett\u00e4 l\u00e4pi koko asiointipolun."
+    "title": "Saumaton integraatio nykyisiin järjestelmiin",
+    "description": "BrightFlow integroituu saumattomasti olemassa oleviin verkkosivuihin ja taustajärjestelmiin. Tarjoa yhdenmukainen asiointikokemus palvelusta riippumatta ja tue yhtenäistä brändi-ilmettä läpi koko asiointipolun."
   },
   "features": {
     "title": "Miksi valita BrightFlow?",
@@ -21,43 +21,43 @@
     "items": [
       {
         "title": "Erinomainen saavutettavuus",
-        "description": "WCAG AA -tason mukainen saavutettavuus varmistaa, ett\u00e4 kaikki k\u00e4ytt\u00e4j\u00e4t voivat asioida sujuvasti."
+        "description": "WCAG AA -tason mukainen saavutettavuus varmistaa, että kaikki käyttäjät voivat asioida sujuvasti."
       },
       {
-        "title": "Huippuluokan k\u00e4ytt\u00e4j\u00e4kokemus",
-        "description": "Intuitiivinen ja helppok\u00e4ytt\u00f6inen k\u00e4ytt\u00f6liittym\u00e4, joka on suunniteltu loppuk\u00e4ytt\u00e4j\u00e4\u00e4 ajatellen."
+        "title": "Huippuluokan käyttäjäkokemus",
+        "description": "Intuitiivinen ja helppokäyttöinen käyttöliittymä, joka on suunniteltu käyttäjiä ajatellen."
       },
       {
         "title": "Moderni teknologia",
-        "description": "Valmiit click-and-go-integraatiot keskeisiin SaaS-palveluihin nopeuttavat k\u00e4ytt\u00f6\u00f6nottoa."
+        "description": "Valmiit click-and-go-integraatiot keskeisiin SaaS-palveluihin nopeuttavat käyttöönottoa."
       },
       {
         "title": "Korkea tietoturva",
-        "description": "ISO27001-sertifioitu tietoturva ja GDPR-yhteensopivuus takaavat tietosuojan."
+        "description": "ISO27001-standardin mukaisuus ja GDPR-yhteensopivuus takaavat korkean tietoturvan ja tietosuojan."
       }
     ]
   },
   "benefits": {
     "orgTitle": "Asiakkaanamme saat",
     "orgItems": [
-      "Hallintaportaalin sis\u00e4ll\u00f6n, ulkoasun, palveluiden ja ty\u00f6nkulkujen muokkaamiseen",
+      "Hallintaportaalin sisällön, ulkoasun, palveluiden ja työnkulkujen muokkaamiseen",
       "Kevyen tai vahvan tunnistautumisen",
-      "Kytkeytymisen asiakkaan k\u00e4ytt\u00e4j\u00e4hallintaan",
+      "Kytkeytymisen organisaatiosi käyttäjähallintaan",
       "Kytkeytymisen yleisimpiin maksupalveluihin",
-      "Tekstiviestien ja s\u00e4hk\u00f6postien l\u00e4hetyksen alustalta"
+      "Tekstiviestien ja sähköpostien lähetyksen alustalta"
     ],
-    "customerTitle": "Asiakkaasi saavat",
+    "customerTitle": "Palvelujen käyttäjänä saat",
     "customerItems": [
-      "Helppok\u00e4ytt\u00f6iset ja yhdenmukaiset digitaaliset palvelut",
-      "Mahdollisuuden omien tietojen tarkasteluun ja p\u00e4ivitt\u00e4miseen",
-      "N\u00e4kym\u00e4n omaan asiointihistoriaan",
-      "Omien keskener\u00e4isten asioiden tilan seurannan"
+      "Helppokäyttöiset ja yhdenmukaiset digitaaliset palvelut",
+      "Mahdollisuuden omien tietojesi tarkasteluun ja päivittämiseen",
+      "Näkymän omaan asiointihistoriaasi",
+      "Omien keskeneräisten asioidesi tilan seurannan"
     ]
   },
   "cta": {
     "title": "Valmis aloittamaan?",
-    "description": "Ota yhteytt\u00e4 ja selvitet\u00e4\u00e4n yhdess\u00e4, miten BrightFlow voi tehostaa organisaatiosi digitaalista asiointia.",
-    "contact": "Ota yhteytt\u00e4",
+    "description": "Ota yhteyttä ja selvitetään yhdessä, miten BrightFlow voi tehostaa organisaatiosi digitaalista asiointia.",
+    "contact": "Ota yhteyttä",
     "pricing": "Katso hinnoittelu"
   }
 }

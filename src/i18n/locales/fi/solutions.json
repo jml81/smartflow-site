@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Ratkaisut \u2013 BrightFlow",
+    "title": "Ratkaisut – BrightFlow",
     "description": "BrightFlow sopii julkisille organisaatioille ja yrityksille, joilla on tiukat vaatimukset tietoturvalle ja saavutettavuudelle."
   },
   "hero": {
@@ -10,11 +10,11 @@
   "cards": [
     {
       "title": "Kunnat ja kaupungit",
-      "description": "Tarjoa kuntalaisille yhten\u00e4inen digitaalinen asiointikokemus kaikissa kunnan palveluissa.",
+      "description": "Tarjoa asukkaille, yrityksille ja järjestöille yhtenäinen digitaalinen asiointikokemus kaikissa kunnan palveluissa.",
       "benefits": [
-        "Yhten\u00e4inen asiointialusta kaikille kunnan palveluille",
-        "Lupahakemusten ja ilmoitusten s\u00e4hk\u00f6inen k\u00e4sittely",
-        "Asukkaiden tietojen hallinta ja p\u00e4ivitys",
+        "Yhtenäinen asiointialusta kaikille kunnan palveluille",
+        "Lupahakemusten ja ilmoitusten sähköinen käsittely",
+        "Asukkaiden tietojen hallinta ja päivitys",
         "Maksujen vastaanotto suoraan alustalla"
       ]
     },
@@ -23,19 +23,10 @@
       "description": "Digitalisoi viranomaispalvelut turvallisesti ja saavutettavasti.",
       "benefits": [
         "Vahvan tunnistautumisen integraatiot",
-        "ISO27001-tason tietoturva",
-        "T\u00e4ysi WCAG AA -saavutettavuus",
-        "Automaattiset ty\u00f6nkulut ja ilmoitukset"
-      ]
-    },
-    {
-      "title": "Hyvinvointialueet",
-      "description": "Rakenna sujuva digitaalinen asiointipolku sosiaali- ja terveyspalveluihin.",
-      "benefits": [
-        "Ajanvaraus ja jonotusnumeroiden hallinta",
-        "Asiointihistorian seuranta",
-        "Turvallinen tiedonsiirto ja viestint\u00e4",
-        "Integraatiot potilastietoj\u00e4rjestelmiin"
+        "ISO27001-standardin mukainen tietoturva",
+        "Täysi WCAG AA -saavutettavuus",
+        "Automaattiset työnkulut ja ilmoitukset",
+        "GDPR-mukainen tietosuoja"
       ]
     },
     {
@@ -44,15 +35,15 @@
       "benefits": [
         "Asiakasportaali omien tietojen hallintaan",
         "Tilausten ja laskujen seuranta",
-        "Tukipyynt\u00f6jen ja palautteiden k\u00e4sittely",
-        "Integraatiot CRM- ja ERP-j\u00e4rjestelmiin"
+        "Tukipyyntöjen ja palautteiden käsittely",
+        "Integraatiot CRM- ja ERP-järjestelmiin"
       ]
     }
   ],
   "cardCta": "Keskustellaan tarpeistanne",
   "bottomSection": {
     "title": "Kenelle BrightFlow on tarkoitettu?",
-    "description": "BrightFlow on suunniteltu organisaatioille, jotka haluavat tarjota asiakkailleen yhdenmukaisen, helppok\u00e4ytt\u00f6isen ja turvallisen digitaalisen asiointikokemuksen.",
-    "cta": "Ota yhteytt\u00e4"
+    "description": "BrightFlow on suunniteltu organisaatioille, jotka haluavat tarjoa asiakkailleen yhdenmukaisen, helppokäyttöisen ja turvallisen digitaalisen asiointikokemuksen.",
+    "cta": "Ota yhteyttä"
   }
 }
