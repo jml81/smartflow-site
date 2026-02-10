@@ -44,7 +44,7 @@ describe('routes', () => {
       expect(localePath('fi', 'features')).toBe('/fi/ominaisuudet');
       expect(localePath('fi', 'solutions')).toBe('/fi/ratkaisut');
       expect(localePath('fi', 'security')).toBe('/fi/turvallisuus-ja-saavutettavuus');
-      expect(localePath('fi', 'start')).toBe('/fi/aloita');
+      expect(localePath('fi', 'start')).toBe('/fi/palvelu');
       expect(localePath('fi', 'contact')).toBe('/fi/yhteystiedot');
     });
 
@@ -52,7 +52,7 @@ describe('routes', () => {
       expect(localePath('en', 'features')).toBe('/en/features');
       expect(localePath('en', 'solutions')).toBe('/en/solutions');
       expect(localePath('en', 'security')).toBe('/en/security-and-accessibility');
-      expect(localePath('en', 'start')).toBe('/en/get-started');
+      expect(localePath('en', 'start')).toBe('/en/service');
       expect(localePath('en', 'contact')).toBe('/en/contact');
     });
   });

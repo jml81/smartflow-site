@@ -104,12 +104,18 @@ const Ominaisuudet = (): React.ReactNode => {
           aria-hidden="true"
         />
         <div className="container relative">
-          <AnimatedSection>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">{t('core.title')}</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-              {t('core.subtitle')}
-            </p>
-          </AnimatedSection>
+          {(t('core.title') || t('core.subtitle')) && (
+            <AnimatedSection>
+              {t('core.title') && (
+                <h2 className="text-center text-2xl font-bold sm:text-3xl">{t('core.title')}</h2>
+              )}
+              {t('core.subtitle') && (
+                <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+                  {t('core.subtitle')}
+                </p>
+              )}
+            </AnimatedSection>
+          )}
           <StaggeredChildren
             className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             stagger={0.08}
