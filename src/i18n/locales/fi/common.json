@@ -4,26 +4,26 @@
     "features": "Ominaisuudet",
     "solutions": "Ratkaisut",
     "security": "Turvallisuus",
-    "start": "Palvelu",
+    "start": "Aloita",
     "contact": "Yhteystiedot"
   },
   "header": {
     "brandName": "BrightFlow",
     "brandLetter": "B",
     "brandAriaLabel": "BrightFlow - Etusivu",
-    "contactCta": "Ota yhteyttä",
-    "skipToContent": "Siirry sisältöön",
-    "mainNav": "Päänavigaatio",
+    "contactCta": "Ota yhteytt\u00e4",
+    "skipToContent": "Siirry sis\u00e4lt\u00f6\u00f6n",
+    "mainNav": "P\u00e4\u00e4navigaatio",
     "mobileNav": "Mobiilinavigaatio",
     "openMenu": "Avaa valikko",
     "closeMenu": "Sulje valikko"
   },
   "footer": {
-    "description": "Markkinoiden paras sähköisen asioinnin alusta julkisille organisaatioille ja yrityksille. Tarjoa saavutettavia, turvallisia ja yhdenmukaisia digipalveluja asiakkaillesi.",
+    "description": "Markkinoiden paras s\u00e4hk\u00f6isen asioinnin alusta julkisille organisaatioille ja yrityksille. Tarjoa saavutettavia, turvallisia ja yhdenmukaisia digipalveluja asiakkaillesi.",
     "poweredBy": "BrightFlow, Powered by Antesto",
     "product": "Tuote",
     "company": "Yritys",
-    "copyright": "© {{year}} BrightFlow. Kaikki oikeudet pidätetään.",
+    "copyright": "\u00a9 {{year}} BrightFlow. Kaikki oikeudet pid\u00e4tet\u00e4\u00e4n.",
     "privacy": "Tietosuoja",
     "accessibility": "Saavutettavuus"
   },
@@ -33,10 +33,10 @@
     "page": "Sivu"
   },
   "notFound": {
-    "title": "Sivua ei löytynyt",
-    "description": "Valitettavasti etsimääsi sivua ei ole olemassa tai se on siirretty.",
+    "title": "Sivua ei l\u00f6ytynyt",
+    "description": "Valitettavasti etsim\u00e4\u00e4si sivua ei ole olemassa tai se on siirretty.",
     "goHome": "Etusivulle",
-    "goContact": "Ota yhteyttä"
+    "goContact": "Ota yhteytt\u00e4"
   },
   "language": {
     "fi": "Suomi",

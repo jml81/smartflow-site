@@ -7,7 +7,7 @@ import { StaggeredChildren, StaggeredItem } from '@/components/ui/staggered-chil
 import { SectionDivider } from '@/components/ui/section-divider';
 import { useLocalePath } from '@/hooks/use-locale-path';
 import { usePageMeta } from '@/hooks/use-page-meta';
-import { Building2, Landmark, Factory, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Building2, Landmark, HeartPulse, Factory, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface SolutionCardProps {
   icon: React.ReactNode;
@@ -63,6 +63,7 @@ function SolutionCard({
 const solutionIcons = [
   <Landmark className="h-7 w-7" aria-hidden="true" />,
   <Building2 className="h-7 w-7" aria-hidden="true" />,
+  <HeartPulse className="h-7 w-7" aria-hidden="true" />,
   <Factory className="h-7 w-7" aria-hidden="true" />,
 ];
 

@@ -1,17 +1,17 @@
 {
   "meta": {
-    "title": "Security & Accessibility – BrightFlow",
+    "title": "Security & Accessibility \u2013 BrightFlow",
     "description": "BrightFlow is built to the highest security and accessibility standards."
   },
   "hero": {
     "title": "Security & Accessibility",
     "subtitle": "BrightFlow is built to the highest security and accessibility standards."
   },
-  "securityTitle": "Security and Data Protection",
+  "securityTitle": "Security",
   "securityItems": [
     {
-      "title": "ISO 27001-Compliant Security",
-      "description": "BrightFlow is built to meet the requirements of the international ISO 27001 information security standard."
+      "title": "ISO 27001 Certified Security",
+      "description": "BrightFlow meets the requirements of the international ISO 27001 information security standard."
     },
     {
       "title": "GDPR Compliance",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Solutions – BrightFlow",
+    "title": "Solutions \u2013 BrightFlow",
     "description": "BrightFlow is designed for public organizations and enterprises with strict security and accessibility requirements."
   },
   "hero": {
@@ -10,7 +10,7 @@
   "cards": [
     {
       "title": "Municipalities & Cities",
-      "description": "Offer residents, businesses, and organizations a unified digital service experience across all municipal services.",
+      "description": "Offer residents a unified digital service experience across all municipal services.",
       "benefits": [
         "A single platform for all municipal services",
         "Digital processing of permits and notifications",
@@ -23,10 +23,19 @@
       "description": "Digitize government services securely and accessibly.",
       "benefits": [
         "Strong authentication integrations",
-        "ISO 27001-standard security",
+        "ISO 27001-level security",
         "Full WCAG AA accessibility",
-        "Automated workflows and notifications",
-        "GDPR-compliant data protection"
+        "Automated workflows and notifications"
+      ]
+    },
+    {
+      "title": "Healthcare & Welfare Regions",
+      "description": "Build a smooth digital service path for social and healthcare services.",
+      "benefits": [
+        "Appointment booking and queue management",
+        "Service history tracking",
+        "Secure data transfer and communication",
+        "Integrations with patient information systems"
       ]
     },
     {
@@ -40,7 +49,7 @@
       ]
     }
   ],
-  "cardCta": "Let's Discuss Your Needs",
+  "cardCta": "Let\u2019s Discuss Your Needs",
   "bottomSection": {
     "title": "Who Is BrightFlow For?",
     "description": "BrightFlow is built for organizations that want to offer their customers a consistent, easy-to-use, and secure digital service experience.",

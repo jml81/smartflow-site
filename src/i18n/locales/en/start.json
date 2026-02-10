@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Service – BrightFlow",
+    "title": "Get Started \u2013 BrightFlow",
     "description": "Getting started with BrightFlow is a straightforward process."
   },
   "hero": {
@@ -11,7 +11,7 @@
   "steps": [
     {
       "title": "Discovery",
-      "description": "We assess your organization's needs and goals."
+      "description": "We assess your organization\u2019s needs and goals."
     },
     {
       "title": "Customization",
@@ -26,7 +26,7 @@
       "description": "BrightFlow is ready to serve your customers."
     }
   ],
-  "includedTitle": "What's Included in BrightFlow?",
+  "includedTitle": "What\u2019s Included in BrightFlow?",
   "includedItems": [
     "Full WCAG AA accessibility",
     "ISO 27001-level security",
@@ -39,7 +39,7 @@
   ],
   "pricing": {
     "title": "Pricing Tailored to Your Needs",
-    "description": "Pricing is based on your organization's size, number of users, and required integrations.",
+    "description": "Pricing is based on your organization\u2019s size, number of users, and required integrations.",
     "ctaDemo": "Book a Demo",
     "ctaQuote": "Request a Quote"
   },

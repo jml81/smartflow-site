@@ -34,7 +34,7 @@ const App = (): React.ReactNode => (
         <Route path="ominaisuudet" element={<Ominaisuudet />} />
         <Route path="ratkaisut" element={<Ratkaisut />} />
         <Route path="turvallisuus-ja-saavutettavuus" element={<TurvallisuusJaSaavutettavuus />} />
-        <Route path="palvelu" element={<Aloita />} />
+        <Route path="aloita" element={<Aloita />} />
         <Route path="yhteystiedot" element={<Yhteystiedot />} />
         <Route path="*" element={<NotFound />} />
       </Route>
@@ -45,7 +45,7 @@ const App = (): React.ReactNode => (
         <Route path="features" element={<Ominaisuudet />} />
         <Route path="solutions" element={<Ratkaisut />} />
         <Route path="security-and-accessibility" element={<TurvallisuusJaSaavutettavuus />} />
-        <Route path="service" element={<Aloita />} />
+        <Route path="get-started" element={<Aloita />} />
         <Route path="contact" element={<Yhteystiedot />} />
         <Route path="*" element={<NotFound />} />
       </Route>

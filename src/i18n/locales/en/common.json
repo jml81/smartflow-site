@@ -4,7 +4,7 @@
     "features": "Features",
     "solutions": "Solutions",
     "security": "Security",
-    "start": "Service",
+    "start": "Get Started",
     "contact": "Contact"
   },
   "header": {
@@ -23,7 +23,7 @@
     "poweredBy": "BrightFlow, Powered by Antesto",
     "product": "Product",
     "company": "Company",
-    "copyright": "© {{year}} BrightFlow. All rights reserved.",
+    "copyright": "\u00a9 {{year}} BrightFlow. All rights reserved.",
     "privacy": "Privacy",
     "accessibility": "Accessibility"
   },

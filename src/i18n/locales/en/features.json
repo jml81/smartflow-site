@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Features – BrightFlow",
-    "description": "BrightFlow – everything you need to build modern digital services."
+    "title": "Features \u2013 BrightFlow",
+    "description": "BrightFlow offers a comprehensive set of features for building modern digital services."
   },
   "hero": {
     "title": "Features",
-    "subtitle": "BrightFlow – everything you need to build modern digital services."
+    "subtitle": "BrightFlow offers a comprehensive set of features for building modern digital services."
   },
   "core": {
-    "title": "",
-    "subtitle": "",
+    "title": "Core Features",
+    "subtitle": "Everything you need to build and manage digital services.",
     "items": [
       {
         "title": "Admin Portal",
@@ -25,7 +25,7 @@
       },
       {
         "title": "Flexible Authentication",
-        "description": "Support for both light and strong authentication to match your organization's needs."
+        "description": "Support for both light and strong authentication to match your organization\u2019s needs."
       },
       {
         "title": "User Management Integration",
