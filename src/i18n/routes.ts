@@ -13,7 +13,7 @@ const routeSlugs = {
     features: 'ominaisuudet',
     solutions: 'ratkaisut',
     security: 'turvallisuus-ja-saavutettavuus',
-    start: 'aloita',
+    start: 'palvelu',
     contact: 'yhteystiedot',
   },
   en: {
@@ -21,7 +21,7 @@ const routeSlugs = {
     features: 'features',
     solutions: 'solutions',
     security: 'security-and-accessibility',
-    start: 'get-started',
+    start: 'service',
     contact: 'contact',
   },
 } as const;
